@@ -1,12 +1,10 @@
 {
   "season": 2,
-  "note": "Hand-maintained from the match-day recaps. Play order flexes from the fixture list — the league works through the 15 scheduled days as nights happen, and the pairings played on a given night don't always match that night's position in the schedule. `scheduleDay` records which fixture slate a session's pairings came from, when it's known.",
+  "note": "Hand-maintained from the match-day recaps. Match days are numbered by the order they were actually played — the lineup pool in schedule.json has no fixed order, so whichever lineup gets played next simply becomes the next match day.",
   "matchDays": [
     {
       "matchDay": 1,
       "date": "2026-09-01",
-      "scheduleDay": 9,
-      "scheduleNote": "The pairings played (FF–BI and OG–CG) are the Day 9 slate, not Day 1's. The rotation is intact — the league just played that slate first.",
       "bye": ["LS", "999"],
       "series": [
         {

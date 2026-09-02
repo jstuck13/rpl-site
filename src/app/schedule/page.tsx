@@ -5,7 +5,7 @@ import {
   DAYS_TOTAL,
   FORMAT,
   MATCH_DAYS,
-  remainingDays,
+  remainingLineups,
   seriesScore,
   type SeriesResult,
 } from "@/lib/season";
@@ -54,7 +54,27 @@ function SeriesCard({ series }: { series: SeriesResult }) {
 }
 
 export default function SchedulePage() {
-  const upcoming = remainingDays();
+  // Identical lineups are the two legs of the same pairing. Group them so the
+  // list reads as "this matchup is still owed twice" instead of showing what
+  // looks like a duplicated row.
+  const pool = remainingLineups();
+  const grouped: { series: [string, string][]; bye: string[]; count: number }[] =
+    [];
+  for (const lineup of pool) {
+    const key = lineup.series
+      .map((pair) => [...pair].sort().join("+"))
+      .sort()
+      .join("|");
+    const existing = grouped.find(
+      (g) =>
+        g.series
+          .map((pair) => [...pair].sort().join("+"))
+          .sort()
+          .join("|") === key
+    );
+    if (existing) existing.count += 1;
+    else grouped.push({ series: lineup.series, bye: lineup.bye, count: 1 });
+  }
 
   return (
     <div className="shell stack">
@@ -92,11 +112,6 @@ export default function SchedulePage() {
                     <SeriesCard key={`${s.home}-${s.away}`} series={s} />
                   ))}
                 </div>
-                {day.scheduleNote && (
-                  <p className="note" style={{ marginTop: "16px" }}>
-                    {day.scheduleNote}
-                  </p>
-                )}
               </div>
             ))}
           </div>
@@ -105,34 +120,49 @@ export default function SchedulePage() {
 
       <section>
         <div className="section__head">
-          <h2 className="section__title">Remaining fixtures</h2>
+          <h2 className="section__title">Lineups still to play</h2>
+          <span className="day-head__meta">
+            {pool.length} of {DAYS_TOTAL}
+          </span>
         </div>
         <div className="panel table-scroll">
           <table className="table">
             <thead>
               <tr>
-                <th>Day</th>
                 <th>Series</th>
                 <th>Bye</th>
+                <th className="num">Left</th>
               </tr>
             </thead>
             <tbody>
-              {upcoming.map((day) => (
-                <tr key={day.day}>
-                  <td className="rank-col">{day.day}</td>
+              {grouped.map((lineup) => (
+                <tr
+                  key={lineup.series
+                    .map(([a, b]) => `${a}-${b}`)
+                    .join("_")}
+                >
                   <td>
-                    {day.series
+                    {lineup.series
                       .map(([a, b]) => `${teamName(a)} v ${teamName(b)}`)
                       .join("  ·  ")}
                   </td>
                   <td style={{ color: "var(--rpl-text-faint)" }}>
-                    {day.bye.map(teamName).join(", ")}
+                    {lineup.bye.map(teamName).join(", ")}
+                  </td>
+                  <td className="num" style={{ color: "var(--rpl-text-faint)" }}>
+                    &times;{lineup.count}
                   </td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+        <p className="note" style={{ marginTop: "16px" }}>
+          These are a pool, not a calendar. Any lineup can be played on any
+          night, and whichever one gets played next becomes the next match day.
+          A matchup marked &times;2 is still owed twice — both legs of the
+          double round robin.
+        </p>
       </section>
     </div>
   );

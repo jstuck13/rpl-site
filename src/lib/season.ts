@@ -13,8 +13,15 @@ import schedule from "@/data/schedule.json";
 import results from "@/data/results.json";
 import { teamName, teamsForSeason } from "./teams";
 
-export interface ScheduleDay {
-  day: number;
+/**
+ * One night's slate: two series, two teams on bye.
+ *
+ * Lineups are a POOL, not a calendar. They have no numbers and no order — any
+ * lineup can be played on any night, and the one that gets played next simply
+ * becomes the next match day. The pool holds each pairing twice (the two legs
+ * of the double round robin), so several lineups are deliberate duplicates.
+ */
+export interface Lineup {
   series: [string, string][];
   bye: string[];
 }
@@ -34,15 +41,14 @@ export interface SeriesResult {
 }
 
 export interface MatchDay {
+  /** Sequence in which it was actually played, not a position in the pool. */
   matchDay: number;
   date: string;
-  scheduleDay?: number;
-  scheduleNote?: string;
   bye: string[];
   series: SeriesResult[];
 }
 
-export const SCHEDULE = schedule.days as ScheduleDay[];
+export const LINEUPS = schedule.lineups as Lineup[];
 export const FORMAT = schedule.format;
 export const MATCH_DAYS = results.matchDays as MatchDay[];
 
@@ -151,26 +157,33 @@ export function seriesLabel(series: SeriesResult): string {
   return `${teamName(series.home)} v ${teamName(series.away)}`;
 }
 
+/** The pairings in a lineup or a played match day, order-independent. */
+function pairingKey(pairs: [string, string][]): string {
+  return pairs
+    .map((pair) => [...pair].sort().join("+"))
+    .sort()
+    .join("|");
+}
+
 /**
- * Fixture days with no logged result yet.
+ * Lineups still to be played.
  *
- * Matched by the `scheduleDay` recorded on each played match day, NOT by
- * counting — the league doesn't necessarily play the slates in schedule order.
- * Match Day 1, for instance, played the Day 9 slate. Counting would have marked
- * Day 1 as done and left Day 9 outstanding, which is exactly backwards.
- *
- * A played match day with no `scheduleDay` recorded clears nothing, so an
- * unmapped session leaves every fixture listed rather than silently retiring
- * the wrong one.
+ * A played match day retires one lineup matching its pairings — no manual
+ * bookkeeping, and nothing depends on the order the pool happens to be written
+ * in. Because each pairing appears twice in the pool, playing it once retires
+ * one of the two copies and leaves the rematch outstanding, which is correct.
  */
-export function remainingDays(): ScheduleDay[] {
-  const played = new Set(
-    MATCH_DAYS.map((d) => d.scheduleDay).filter(
-      (d): d is number => typeof d === "number"
-    )
-  );
-  return SCHEDULE.filter((d) => !played.has(d.day));
+export function remainingLineups(): Lineup[] {
+  const pool = [...LINEUPS];
+  for (const day of MATCH_DAYS) {
+    const key = pairingKey(
+      day.series.map((s) => [s.home, s.away] as [string, string])
+    );
+    const i = pool.findIndex((l) => pairingKey(l.series) === key);
+    if (i !== -1) pool.splice(i, 1);
+  }
+  return pool;
 }
 
 export const DAYS_PLAYED = MATCH_DAYS.length;
-export const DAYS_TOTAL = SCHEDULE.length;
+export const DAYS_TOTAL = LINEUPS.length;
