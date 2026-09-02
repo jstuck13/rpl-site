@@ -1,0 +1,28 @@
+{
+  "season": 2,
+  "format": {
+    "teams": 6,
+    "seriesPerDay": 2,
+    "teamsOnByePerDay": 2,
+    "seriesLength": "Bo3",
+    "totalSeries": 30,
+    "note": "Double round robin — every team plays every other team twice. Each match day has 4 teams playing and 2 on bye, so the season runs 15 days. Days are played in order but are not tied to calendar dates; the league works through them as nights happen, sometimes two days' worth in one sitting."
+  },
+  "days": [
+    { "day": 1, "series": [["LS", "FF"], ["BI", "OG"]], "bye": ["999", "CG"] },
+    { "day": 2, "series": [["LS", "OG"], ["FF", "CG"]], "bye": ["BI", "999"] },
+    { "day": 3, "series": [["BI", "999"], ["CG", "OG"]], "bye": ["LS", "FF"] },
+    { "day": 4, "series": [["LS", "CG"], ["OG", "999"]], "bye": ["BI", "FF"] },
+    { "day": 5, "series": [["LS", "999"], ["CG", "BI"]], "bye": ["OG", "FF"] },
+    { "day": 6, "series": [["999", "CG"], ["OG", "FF"]], "bye": ["LS", "BI"] },
+    { "day": 7, "series": [["LS", "BI"], ["999", "FF"]], "bye": ["CG", "OG"] },
+    { "day": 8, "series": [["LS", "FF"], ["BI", "OG"]], "bye": ["999", "CG"] },
+    { "day": 9, "series": [["CG", "OG"], ["FF", "BI"]], "bye": ["LS", "999"] },
+    { "day": 10, "series": [["LS", "OG"], ["FF", "CG"]], "bye": ["BI", "999"] },
+    { "day": 11, "series": [["LS", "CG"], ["OG", "999"]], "bye": ["BI", "FF"] },
+    { "day": 12, "series": [["OG", "FF"], ["BI", "999"]], "bye": ["LS", "CG"] },
+    { "day": 13, "series": [["LS", "999"], ["CG", "BI"]], "bye": ["OG", "FF"] },
+    { "day": 14, "series": [["LS", "BI"], ["999", "FF"]], "bye": ["CG", "OG"] },
+    { "day": 15, "series": [["FF", "BI"], ["999", "CG"]], "bye": ["LS", "OG"] }
+  ]
+}

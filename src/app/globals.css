@@ -471,3 +471,119 @@ a {
     padding: var(--rpl-space-3) 0;
   }
 }
+
+/* ---- schedule & results --------------------------------------------------- */
+
+.day-head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--rpl-space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--rpl-space-3);
+}
+
+.day-head__title {
+  margin: 0;
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-gold);
+}
+
+.day-head__meta {
+  font-size: 13px;
+  color: var(--rpl-text-faint);
+}
+
+.grid--series {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+.series {
+  background: var(--rpl-panel-gradient);
+  border: 1px solid var(--rpl-border);
+  border-radius: var(--rpl-radius-lg);
+  padding: var(--rpl-space-4);
+  box-shadow: var(--rpl-shadow-bar);
+}
+
+.series__teams {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+  gap: var(--rpl-space-3);
+}
+
+.series__team {
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--rpl-text-dim);
+  line-height: 1.2;
+}
+
+.series__teams .series__team:last-child {
+  text-align: right;
+}
+
+.series__team--won {
+  color: var(--rpl-text);
+}
+
+.series__score {
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 24px;
+  color: var(--rpl-gold);
+  font-variant-numeric: tabular-nums;
+  padding: 0 var(--rpl-space-2);
+}
+
+.series__games {
+  list-style: none;
+  display: flex;
+  gap: var(--rpl-space-4);
+  margin: var(--rpl-space-4) 0 0;
+  padding: var(--rpl-space-3) 0 0;
+  border-top: 1px solid var(--rpl-border);
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+  color: var(--rpl-text-faint);
+  flex-wrap: wrap;
+}
+
+.series__games li {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+}
+
+.series__games-label {
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: var(--rpl-tracking-label);
+  color: var(--rpl-text-faint);
+  margin-right: 2px;
+}
+
+.series__games-win {
+  color: var(--rpl-text);
+  font-weight: 600;
+}
+
+.series__games-dash {
+  color: var(--rpl-text-faint);
+}
+
+.series__summary {
+  margin: var(--rpl-space-3) 0 0;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--rpl-text-dim);
+}

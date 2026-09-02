@@ -1,0 +1,37 @@
+{
+  "season": 2,
+  "note": "Hand-maintained from the match-day recaps. Play order flexes from the fixture list — the league works through the 15 scheduled days as nights happen, and the pairings played on a given night don't always match that night's position in the schedule. `scheduleDay` records which fixture slate a session's pairings came from, when it's known.",
+  "matchDays": [
+    {
+      "matchDay": 1,
+      "date": "2026-09-01",
+      "scheduleDay": 9,
+      "scheduleNote": "The pairings played (FF–BI and OG–CG) are the Day 9 slate, not Day 1's. The rotation is intact — the league just played that slate first.",
+      "bye": ["LS", "999"],
+      "series": [
+        {
+          "home": "FF",
+          "away": "BI",
+          "winner": "FF",
+          "games": [
+            { "game": 1, "home": 4, "away": 1 },
+            { "game": 2, "home": 2, "away": 3 },
+            { "game": 3, "home": 5, "away": 2 }
+          ],
+          "summary": "Fortnite Flick FC took it 2–1, but Bucky Irving out-worked them on the resource stats throughout — most boost collected and stolen of any team, and a 12-to-1 demo count in their favour. TRS 1000's three-goal decider closed it out after BI levelled the series."
+        },
+        {
+          "home": "OG",
+          "away": "CG",
+          "winner": "OG",
+          "games": [
+            { "game": 1, "home": 2, "away": 1 },
+            { "game": 2, "home": 6, "away": 3 },
+            { "game": 3, "home": 3, "away": 1 }
+          ],
+          "summary": "A clean sweep. Own Goal FC spent the least time in their own defensive third and the most in the opponent's of any team on the night, and recorded only four saves across three games — they mostly didn't need them. Bl4zeDaddy scored in all three."
+        }
+      ]
+    }
+  ]
+}

@@ -5,12 +5,14 @@ import {
   leaderboard,
   rosters,
 } from "@/lib/data";
+import { DAYS_PLAYED, DAYS_TOTAL, goalDiff, standings } from "@/lib/season";
 import { PlayerTable } from "@/components/PlayerRow";
 
 export default function HomePage() {
   const board = leaderboard();
   const top = board.slice(0, 8);
   const squads = rosters();
+  const table = standings();
   const totalValue = board.reduce(
     (sum, p) => sum + (p.valuation.playerValue ?? 0),
     0
@@ -25,7 +27,8 @@ export default function HomePage() {
         </h1>
         <p className="hero__lede">
           Six clubs, {board.length} rostered players, one auction-drafted salary
-          cap. Player Value recalculates from every logged match.
+          cap. {DAYS_PLAYED} of {DAYS_TOTAL} match days played — Player Value
+          recalculates from every logged match.
         </p>
       </section>
 
@@ -51,6 +54,50 @@ export default function HomePage() {
               {formatMoney(top[0]?.valuation.playerValue ?? null)}
             </div>
           </div>
+        </div>
+      </section>
+
+      <section>
+        <div className="section__head">
+          <h2 className="section__title">Standings</h2>
+          <Link href="/standings" className="section__link">
+            Full table →
+          </Link>
+        </div>
+        <div className="panel table-scroll">
+          <table className="table">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Club</th>
+                <th className="num">W</th>
+                <th className="num">L</th>
+                <th className="num">GF</th>
+                <th className="num">GA</th>
+                <th className="num">Diff</th>
+              </tr>
+            </thead>
+            <tbody>
+              {table.map((row, i) => {
+                const diff = goalDiff(row);
+                return (
+                  <tr key={row.code}>
+                    <td className="rank-col">{row.played ? i + 1 : "—"}</td>
+                    <td className="player-cell__name">{row.name}</td>
+                    <td className="num">{row.played ? row.wins : "—"}</td>
+                    <td className="num">{row.played ? row.losses : "—"}</td>
+                    <td className="num">{row.played ? row.goalsFor : "—"}</td>
+                    <td className="num">
+                      {row.played ? row.goalsAgainst : "—"}
+                    </td>
+                    <td className="num">
+                      {row.played ? (diff > 0 ? `+${diff}` : diff) : "—"}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
         </div>
       </section>
 
