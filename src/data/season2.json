@@ -1,0 +1,731 @@
+{
+  "season": 2,
+  "players": [
+    {
+      "name": "zPylo",
+      "slug": "zpylo",
+      "estimatedPriorValue": false,
+      "team": "FWG",
+      "isManager": true,
+      "rank": "Champion II",
+      "status": "Inactive",
+      "priorValue": 10000,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": null,
+        "playerValue": null
+      }
+    },
+    {
+      "name": "NO LIGHT",
+      "slug": "no-light",
+      "estimatedPriorValue": false,
+      "team": "TD",
+      "isManager": true,
+      "rank": "Diamond II",
+      "status": "Inactive",
+      "priorValue": 7673,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": null,
+        "playerValue": null
+      }
+    },
+    {
+      "name": "YoBoiHyperr",
+      "slug": "yoboihyperr",
+      "estimatedPriorValue": false,
+      "team": "TTT",
+      "isManager": true,
+      "rank": "Diamond III",
+      "status": "Inactive",
+      "priorValue": 5705,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": null,
+        "playerValue": null
+      }
+    },
+    {
+      "name": "Bl4ze Th3 MaN",
+      "slug": "bl4ze-th3-man",
+      "estimatedPriorValue": false,
+      "team": null,
+      "isManager": false,
+      "rank": "Platinum III",
+      "status": "Inactive",
+      "priorValue": 2375,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": null,
+        "playerValue": null
+      }
+    },
+    {
+      "name": "LLellum",
+      "slug": "llellum",
+      "estimatedPriorValue": false,
+      "team": "FF",
+      "isManager": true,
+      "rank": "Grand Champion I",
+      "status": "Exempt",
+      "priorValue": 15000,
+      "totals": {
+        "goals": 3,
+        "assists": 2,
+        "saves": 5,
+        "shots": 11,
+        "points": 1442,
+        "games": 3
+      },
+      "averages": {
+        "goals": 1,
+        "assists": 0.67,
+        "saves": 1.67,
+        "shots": 3.67,
+        "points": 480.67
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": null,
+        "playerValue": 15000
+      }
+    },
+    {
+      "name": "Astro",
+      "slug": "astro",
+      "estimatedPriorValue": false,
+      "team": "LS",
+      "isManager": true,
+      "rank": "Champion I",
+      "status": "Active",
+      "priorValue": 9269,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": 100,
+        "playerValue": 9269
+      }
+    },
+    {
+      "name": "Killua",
+      "slug": "killua",
+      "estimatedPriorValue": true,
+      "team": "999",
+      "isManager": false,
+      "rank": "Champion I",
+      "status": "Active",
+      "priorValue": 8655,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": 100,
+        "playerValue": 8655
+      }
+    },
+    {
+      "name": "madlabs",
+      "slug": "madlabs",
+      "estimatedPriorValue": false,
+      "team": "999",
+      "isManager": true,
+      "rank": "Champion I",
+      "status": "Active",
+      "priorValue": 8041,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": 100,
+        "playerValue": 8041
+      }
+    },
+    {
+      "name": "TLBoryczka",
+      "slug": "tlboryczka",
+      "estimatedPriorValue": false,
+      "team": "OG",
+      "isManager": false,
+      "rank": "Diamond III",
+      "status": "Active",
+      "priorValue": 8346,
+      "totals": {
+        "goals": 4,
+        "assists": 2,
+        "saves": 3,
+        "shots": 8,
+        "points": 1247,
+        "games": 3
+      },
+      "averages": {
+        "goals": 1.33,
+        "assists": 0.67,
+        "saves": 1,
+        "shots": 2.67,
+        "points": 415.67
+      },
+      "valuation": {
+        "baseValue": 7403,
+        "vsRankBaselinePct": 3.6,
+        "modifier": 108,
+        "seasonValue": 7511,
+        "weightOnPriorPct": 50,
+        "playerValue": 7928
+      }
+    },
+    {
+      "name": "F1yTe Bacon",
+      "slug": "f1yte-bacon",
+      "estimatedPriorValue": true,
+      "team": "CG",
+      "isManager": true,
+      "rank": "Champion I",
+      "status": "Active",
+      "priorValue": 8655,
+      "totals": {
+        "goals": 2,
+        "assists": 2,
+        "saves": 5,
+        "shots": 6,
+        "points": 1124,
+        "games": 3
+      },
+      "averages": {
+        "goals": 0.67,
+        "assists": 0.67,
+        "saves": 1.67,
+        "shots": 2,
+        "points": 374.67
+      },
+      "valuation": {
+        "baseValue": 6395,
+        "vsRankBaselinePct": 22.5,
+        "modifier": 675,
+        "seasonValue": 7070,
+        "weightOnPriorPct": 50,
+        "playerValue": 7862
+      }
+    },
+    {
+      "name": "Sajar47",
+      "slug": "sajar47",
+      "estimatedPriorValue": true,
+      "team": "FF",
+      "isManager": false,
+      "rank": "Diamond III",
+      "status": "Active",
+      "priorValue": 5705,
+      "totals": {
+        "goals": 4,
+        "assists": 3,
+        "saves": 8,
+        "shots": 7,
+        "points": 1564,
+        "games": 3
+      },
+      "averages": {
+        "goals": 1.33,
+        "assists": 1,
+        "saves": 2.67,
+        "shots": 2.33,
+        "points": 521.33
+      },
+      "valuation": {
+        "baseValue": 10000,
+        "vsRankBaselinePct": 34.8,
+        "modifier": 1045,
+        "seasonValue": 10000,
+        "weightOnPriorPct": 62.5,
+        "playerValue": 7316
+      }
+    },
+    {
+      "name": "Jart",
+      "slug": "jart",
+      "estimatedPriorValue": true,
+      "team": "CG",
+      "isManager": false,
+      "rank": "Champion I",
+      "status": "Active",
+      "priorValue": 8655,
+      "totals": {
+        "goals": 2,
+        "assists": 2,
+        "saves": 0,
+        "shots": 8,
+        "points": 650,
+        "games": 3
+      },
+      "averages": {
+        "goals": 0.67,
+        "assists": 0.67,
+        "saves": 0,
+        "shots": 2.67,
+        "points": 216.67
+      },
+      "valuation": {
+        "baseValue": 2583,
+        "vsRankBaselinePct": -22.5,
+        "modifier": -675,
+        "seasonValue": 1909,
+        "weightOnPriorPct": 50,
+        "playerValue": 5282
+      }
+    },
+    {
+      "name": "Bl4zeDaddy",
+      "slug": "bl4zedaddy",
+      "estimatedPriorValue": false,
+      "team": "OG",
+      "isManager": true,
+      "rank": "Diamond II",
+      "status": "Active",
+      "priorValue": 6736,
+      "totals": {
+        "goals": 3,
+        "assists": 2,
+        "saves": 0,
+        "shots": 8,
+        "points": 802,
+        "games": 3
+      },
+      "averages": {
+        "goals": 1,
+        "assists": 0.67,
+        "saves": 0,
+        "shots": 2.67,
+        "points": 267.33
+      },
+      "valuation": {
+        "baseValue": 3793,
+        "vsRankBaselinePct": -13.5,
+        "modifier": -406,
+        "seasonValue": 3387,
+        "weightOnPriorPct": 50,
+        "playerValue": 5061
+      }
+    },
+    {
+      "name": "TRS 1000",
+      "slug": "trs-1000",
+      "estimatedPriorValue": true,
+      "team": "FF",
+      "isManager": false,
+      "rank": "Diamond II",
+      "status": "Active",
+      "priorValue": 4845,
+      "totals": {
+        "goals": 4,
+        "assists": 1,
+        "saves": 2,
+        "shots": 4,
+        "points": 985,
+        "games": 3
+      },
+      "averages": {
+        "goals": 1.33,
+        "assists": 0.33,
+        "saves": 0.67,
+        "shots": 1.33,
+        "points": 328.33
+      },
+      "valuation": {
+        "baseValue": 5256,
+        "vsRankBaselinePct": 3.3,
+        "modifier": 100,
+        "seasonValue": 5357,
+        "weightOnPriorPct": 62.5,
+        "playerValue": 5037
+      }
+    },
+    {
+      "name": "on rollr",
+      "slug": "on-rollr",
+      "estimatedPriorValue": true,
+      "team": "999",
+      "isManager": false,
+      "rank": "Diamond II",
+      "status": "Active",
+      "priorValue": 4845,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": 100,
+        "playerValue": 4845
+      }
+    },
+    {
+      "name": "drateRbmud",
+      "slug": "draterbmud",
+      "estimatedPriorValue": false,
+      "team": "BI",
+      "isManager": false,
+      "rank": "Diamond I",
+      "status": "Active",
+      "priorValue": 4168,
+      "totals": {
+        "goals": 4,
+        "assists": 0,
+        "saves": 2,
+        "shots": 9,
+        "points": 973,
+        "games": 3
+      },
+      "averages": {
+        "goals": 1.33,
+        "assists": 0,
+        "saves": 0.67,
+        "shots": 3,
+        "points": 324.33
+      },
+      "valuation": {
+        "baseValue": 5158,
+        "vsRankBaselinePct": 0,
+        "modifier": 0,
+        "seasonValue": 5158,
+        "weightOnPriorPct": 62.5,
+        "playerValue": 4539
+      }
+    },
+    {
+      "name": "Blockymalrd",
+      "slug": "blockymalrd",
+      "estimatedPriorValue": false,
+      "team": "BI",
+      "isManager": false,
+      "rank": "Diamond II",
+      "status": "Active",
+      "priorValue": 3970,
+      "totals": {
+        "goals": 2,
+        "assists": 2,
+        "saves": 2,
+        "shots": 8,
+        "points": 819,
+        "games": 3
+      },
+      "averages": {
+        "goals": 0.67,
+        "assists": 0.67,
+        "saves": 0.67,
+        "shots": 2.67,
+        "points": 273
+      },
+      "valuation": {
+        "baseValue": 3928,
+        "vsRankBaselinePct": 10.2,
+        "modifier": 306,
+        "seasonValue": 4234,
+        "weightOnPriorPct": 62.5,
+        "playerValue": 4069
+      }
+    },
+    {
+      "name": "Spam God6450",
+      "slug": "spam-god6450",
+      "estimatedPriorValue": false,
+      "team": "OG",
+      "isManager": false,
+      "rank": "Platinum III",
+      "status": "Active",
+      "priorValue": 2375,
+      "totals": {
+        "goals": 4,
+        "assists": 3,
+        "saves": 1,
+        "shots": 9,
+        "points": 1042,
+        "games": 3
+      },
+      "averages": {
+        "goals": 1.33,
+        "assists": 1,
+        "saves": 0.33,
+        "shots": 3,
+        "points": 347.33
+      },
+      "valuation": {
+        "baseValue": 5723,
+        "vsRankBaselinePct": 0,
+        "modifier": 0,
+        "seasonValue": 5723,
+        "weightOnPriorPct": 62.5,
+        "playerValue": 3631
+      }
+    },
+    {
+      "name": "DrewAJC",
+      "slug": "drewajc",
+      "estimatedPriorValue": false,
+      "team": "BI",
+      "isManager": true,
+      "rank": "Diamond III",
+      "status": "Active",
+      "priorValue": 3063,
+      "totals": {
+        "goals": 0,
+        "assists": 1,
+        "saves": 5,
+        "shots": 7,
+        "points": 834,
+        "games": 3
+      },
+      "averages": {
+        "goals": 0,
+        "assists": 0.33,
+        "saves": 1.67,
+        "shots": 2.33,
+        "points": 278
+      },
+      "valuation": {
+        "baseValue": 4047,
+        "vsRankBaselinePct": -38.4,
+        "modifier": -1153,
+        "seasonValue": 2894,
+        "weightOnPriorPct": 50,
+        "playerValue": 2979
+      }
+    },
+    {
+      "name": "Aowtty",
+      "slug": "aowtty",
+      "estimatedPriorValue": false,
+      "team": "LS",
+      "isManager": false,
+      "rank": "Diamond I",
+      "status": "Active",
+      "priorValue": 1797,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": 100,
+        "playerValue": 1797
+      }
+    },
+    {
+      "name": "Ugadawg50",
+      "slug": "ugadawg50",
+      "estimatedPriorValue": false,
+      "team": "CG",
+      "isManager": false,
+      "rank": "Silver III",
+      "status": "Active",
+      "priorValue": 1000,
+      "totals": {
+        "goals": 1,
+        "assists": 0,
+        "saves": 2,
+        "shots": 4,
+        "points": 451,
+        "games": 3
+      },
+      "averages": {
+        "goals": 0.33,
+        "assists": 0,
+        "saves": 0.67,
+        "shots": 1.33,
+        "points": 150.33
+      },
+      "valuation": {
+        "baseValue": 1000,
+        "vsRankBaselinePct": 0,
+        "modifier": 0,
+        "seasonValue": 1000,
+        "weightOnPriorPct": 62.5,
+        "playerValue": 1000
+      }
+    },
+    {
+      "name": "Misnfrmd",
+      "slug": "misnfrmd",
+      "estimatedPriorValue": false,
+      "team": "LS",
+      "isManager": false,
+      "rank": "Diamond II",
+      "status": "Active",
+      "priorValue": 1000,
+      "totals": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null,
+        "games": null
+      },
+      "averages": {
+        "goals": null,
+        "assists": null,
+        "saves": null,
+        "shots": null,
+        "points": null
+      },
+      "valuation": {
+        "baseValue": null,
+        "vsRankBaselinePct": null,
+        "modifier": 0,
+        "seasonValue": null,
+        "weightOnPriorPct": 100,
+        "playerValue": 1000
+      }
+    }
+  ]
+}
