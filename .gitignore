@@ -40,5 +40,9 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Player profile sources — internal working notes, not for the repo
+# Profile sources — internal working notes, not for the repo.
+# These contain open questions and season logs written for Jacob, and are
+# stripped by `npm run profiles` before anything is published.
 data/raw/profiles/
+data/raw/*-draft.md
+data/raw/*.zip

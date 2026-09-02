@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CURRENT_SEASON, formatMoney, rosters } from "@/lib/data";
-import { teamAccent } from "@/lib/teams";
+import { teamAccent, teamSlug } from "@/lib/teams";
 
 export const metadata: Metadata = { title: "Teams" };
 
@@ -30,7 +30,14 @@ export default function TeamsPage() {
               {squads.map((team, i) => (
                 <tr key={team.code}>
                   <td className="rank-col">{i + 1}</td>
-                  <td className="player-cell__name">{team.name}</td>
+                  <td>
+                    <Link
+                      href={`/teams/${teamSlug(team.code)}`}
+                      className="player-cell__name"
+                    >
+                      {team.name}
+                    </Link>
+                  </td>
                   <td>
                     {team.manager ? (
                       <Link href={`/players/${team.manager.slug}`}>
@@ -57,7 +64,9 @@ export default function TeamsPage() {
               className="team-card"
               style={{ ["--team-accent" as string]: teamAccent(team.code) }}
             >
-              <h2 className="team-card__name">{team.name}</h2>
+              <h2 className="team-card__name">
+                <Link href={`/teams/${teamSlug(team.code)}`}>{team.name}</Link>
+              </h2>
               <p className="team-card__meta">
                 {formatMoney(team.totalValue)} squad value
               </p>

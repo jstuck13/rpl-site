@@ -9,6 +9,7 @@ import season1 from "@/data/season1.json";
 import season2 from "@/data/season2.json";
 import league from "@/data/league.json";
 import profiles from "@/data/profiles.json";
+import teamProfiles from "@/data/team-profiles.json";
 import { teamsForSeason } from "./teams";
 
 export interface PlayerTotals {
@@ -183,4 +184,10 @@ const PROFILES = profiles as Record<string, Profile>;
 
 export function profileBySlug(slug: string): Profile | undefined {
   return PROFILES[slug];
+}
+
+const TEAM_PROFILES = teamProfiles as Record<string, Profile>;
+
+export function teamProfileBySlug(slug: string): Profile | undefined {
+  return TEAM_PROFILES[slug];
 }

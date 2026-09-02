@@ -40,6 +40,8 @@ const NAMES = new Map(
 const ROOT = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const IN = resolve(ROOT, "data/raw/profiles");
 const OUT = resolve(ROOT, "src/data/profiles.json");
+const TEAMS_IN = resolve(ROOT, "data/raw/profiles/teams");
+const TEAMS_OUT = resolve(ROOT, "src/data/team-profiles.json");
 
 /** Headings whose entire section is internal-only. Matched case-insensitively. */
 const INTERNAL_SECTIONS = [/^open\b/i, /^season log$/i];
@@ -115,21 +117,22 @@ function parse(markdown) {
   return { intro: intro.join("\n"), sections };
 }
 
-function main() {
-  if (!existsSync(IN)) {
+/** Read a directory of profile markdown, strip the internal parts, return JSON. */
+function buildProfiles(dir, label) {
+  if (!existsSync(dir)) {
     throw new Error(
-      `No profile source at ${IN}. These are gitignored — copy them from the ` +
+      `No profile source at ${dir}. These are gitignored — copy them from the ` +
         `RPL OPS Claude project before running this.`
     );
   }
 
-  const files = readdirSync(IN).filter((f) => f.endsWith(".md"));
+  const files = readdirSync(dir).filter((f) => f.endsWith(".md"));
   const profiles = {};
   let dropped = 0;
 
   for (const file of files) {
     const slug = basename(file, ".md");
-    const raw = readFileSync(resolve(IN, file), "utf8");
+    const raw = readFileSync(resolve(dir, file), "utf8");
     const { intro, sections } = parse(raw);
 
     const publicSections = sections.filter((s) => {
@@ -155,8 +158,8 @@ function main() {
       profile.intro,
       ...profile.sections.flatMap((s) => [s.heading, s.html]),
     ].join("\n");
-    for (const { pattern, label } of LEAK_PATTERNS) {
-      if (pattern.test(blob)) failures.push(`${slug}: ${label}`);
+    for (const { pattern, label: what } of LEAK_PATTERNS) {
+      if (pattern.test(blob)) failures.push(`${label}/${slug}: ${what}`);
     }
   }
   if (failures.length > 0) {
@@ -167,10 +170,22 @@ function main() {
     );
   }
 
-  writeFileSync(OUT, JSON.stringify(profiles, null, 2) + "\n");
+  return { profiles, dropped };
+}
+
+function main() {
+  const players = buildProfiles(IN, "players");
+  writeFileSync(OUT, JSON.stringify(players.profiles, null, 2) + "\n");
   console.log(
-    `profiles.json — ${Object.keys(profiles).length} profiles, ` +
-      `${dropped} internal sections dropped`
+    `profiles.json — ${Object.keys(players.profiles).length} players, ` +
+      `${players.dropped} internal sections dropped`
+  );
+
+  const teams = buildProfiles(TEAMS_IN, "teams");
+  writeFileSync(TEAMS_OUT, JSON.stringify(teams.profiles, null, 2) + "\n");
+  console.log(
+    `team-profiles.json — ${Object.keys(teams.profiles).length} teams, ` +
+      `${teams.dropped} internal sections dropped`
   );
 }
 

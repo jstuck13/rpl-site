@@ -1,0 +1,142 @@
+{
+  "999": {
+    "slug": "999",
+    "intro": "",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1 runner-up: madlabs, Bl4zeDaddy and DrewAJC lost the Final to Lawson State.</li>\n<li>madlabs returns as captain; <strong>both teammates left to manage their own clubs</strong> — Bl4zeDaddy to\nOwn Goal FC, DrewAJC to Bucky Irving FC. 999 is the only club that lost two players to rival\nmanagerships.</li>\n<li>Roster: madlabs (captain, $8,041), Killua ($5,590), on rollr ($4,366). <strong>$5,746 left on the\ncap</strong> — the most unspent of any team.</li>\n<li>Rebuilt entirely with players new to RPL.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1",
+        "html": "<p>madlabs finished Season 1 with one of the league&#39;s most balanced stat lines — 399.85 avg points,\n3rd-highest, across 26 games — on the team that reached the Final. Both of the players he lost to\nrival clubs were developed on that roster.</p>\n"
+      },
+      {
+        "heading": "The draft",
+        "html": "<p>The only club that consistently bought <strong>below</strong> model value. Killua cost $5,590 against a\nChampion I rank baseline of $8,655 — a ~35% discount on a player seeded at the second-highest\nrank tier in the league. on rollr cost $4,366 against a $4,845 baseline, a smaller discount.</p>\n<p>madlabs finished with $5,746 unspent, more than any other manager, while assembling a roster\nwhose rank profile is higher than its price. Whether that&#39;s disciplined value-hunting or a cap he\nnever found a use for is the open question — and it&#39;s the mirror image of Lawson State&#39;s approach\nin the same auction.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The most conservative spend in the league, on the least-measured roster. Killua and on rollr have\nno RPL games on record, so both of their valuations are rank-seeded rather than earned. If the\nChampion I seed on Killua reflects real ability, 999 got the best value in the draft. If it\ndoesn&#39;t, madlabs is carrying two unknowns and $5,746 he can no longer spend, since rosters locked\nat the end of the draft.</p>\n"
+      },
+      {
+        "heading": "Season 2 — no games played yet",
+        "html": "<p>999 was on bye for Match Day 1 and has yet to play a Season 2 series. Killua and on rollr have no\nplayer profiles yet for the same reason.</p>\n"
+      }
+    ]
+  },
+  "bucky-irving-fc": {
+    "slug": "bucky-irving-fc",
+    "intro": "",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>New club for Season 2, built by DrewAJC in his first season as a manager. He played on 999 in\nSeason 1 alongside madlabs and Bl4zeDaddy.</li>\n<li>Roster: DrewAJC (captain, $3,063), Blockymalrd ($8,091), drateRbmud ($7,000). $5,589 left on the\ncap.</li>\n<li>The league&#39;s <strong>only all-veteran, zero-rookie roster</strong> — every player has Season 1 experience.</li>\n<li>Named Fire Water Gang at auction time and renamed to Bucky Irving FC after the draft completed.</li>\n</ul>\n"
+      },
+      {
+        "heading": "The draft",
+        "html": "<p>DrewAJC was the lowest-valued captain at $3,063, which under the fixed lowest-to-highest\nnomination order meant he nominated first in every round — first pick of the board, every time.</p>\n<p>He used it to buy experience at a premium. Blockymalrd cost $8,091 against a Season 1 model value\nof $3,970 (a ~2.0× premium) and drateRbmud cost $7,000 against $4,168 (~1.7×). Both gaps are\nlarge and neither is explained by the stats alone: Blockymalrd finished Season 1 as a mid-pack\nDiamond II, and drateRbmud a mid-pack Diamond I.</p>\n<p>He still finished with $5,589 unspent, the second-most in the league.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>A roster assembled on a thesis the stats don&#39;t directly support — that Season 1 experience is\nworth paying above model for. It&#39;s the most testable bet in the league, because the counter-example\nis sitting right there: Fortnite Flick FC&#39;s all-rookie roster beat them on Match Day 1.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Lost 1–2 to Fortnite Flick FC. 6 goals for, 11 against.</p>\n<p>The result and the underlying numbers point in opposite directions, and it&#39;s the sharpest example\nof that gap on the match day. Bucky Irving <strong>won almost every resource battle</strong>: most boost\ncollected of any team (23,205), most stolen (4,316), highest boost BPM (418, i.e. the busiest team\non the field), and a lopsided <strong>12-to-1 demo count</strong> in their favour. All of that physical\ndominance produced one series win out of three games.</p>\n<p>drateRbmud justified his price — 4 goals across the series, including a 2-goal Game 2 that levelled\nit. Blockymalrd scored twice and inflicted a league-high 8 demos on the day. But DrewAJC, the\nmanager who bet everything on veteran chemistry, <strong>didn&#39;t score once in three games</strong> — 0 goals on\n0.0% shooting.</p>\n<p>Whether the gap between activity and results closes as the roster settles, or whether it&#39;s a real\nfinishing problem, is the thing to watch.</p>\n<p><em>Territorial and boost figures are ballchasing.com proxies, not literal possession.</em></p>\n"
+      }
+    ]
+  },
+  "california-gurls": {
+    "slug": "california-gurls",
+    "intro": "",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>New club for Season 2, built by F1yTe Bacon — himself new to RPL, and the only manager who is\nboth a first-time manager and a first-time player.</li>\n<li>Roster: F1yTe Bacon (captain, $8,655), Jart ($12,689), Ugadawg50 ($900). $1,499 left on the cap.</li>\n<li>Holds the widest price spread on any single roster in league history: <strong>$12,689 to $900</strong>.</li>\n</ul>\n"
+      },
+      {
+        "heading": "The draft",
+        "html": "<p>Jart at $12,689 was the most expensive non-captain purchase of the entire auction — against a\nrank-seeded baseline of $8,655, since he was new to RPL with no Season 1 record. A ~1.5× premium\non a player with no league history at all.</p>\n<p>Ugadawg50 at $900 is the cheapest purchase in RPL auction history. He carried no Season 1 Player\nValue because TTT was pulled from competition, and his raw numbers over 7 games (142.86 avg points)\nwere the weakest recorded per-game production in league history.</p>\n<p>Nearly 60% of the cap went into two players, one of whom had never played an RPL game.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The highest-variance roster in the league. Both the record signing and the record bargain were\nbets on unmeasured players — Jart had no RPL history, Ugadawg50&#39;s history was voided. Only\nF1yTe Bacon&#39;s own valuation rests on anything, and that&#39;s rank-seeded too.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Swept 0–3 by Own Goal FC. 5 goals for, 11 against.</p>\n<p>A rough opening night in every dimension, not just the scoreline. California Gurls spent the most\ntime at 0 boost of any team (583.5 seconds — boost-starved more than anyone), the least time in\nthe attacking third (14.7%), and stole the fewest boost (1,936). They lost the territorial and\nresource battle as clearly as they lost the games.</p>\n<p>F1yTe Bacon was the one bright spot: 2 goals, 2 assists and 5 saves across the sweep, present in\nall three losses without getting much help. Jart, the record signing, contributed goals and\nassists but recorded <strong>zero saves</strong> across the series. Ugadawg50 had the single lowest individual\ngame of the night — a 74 score in Game 1 — on his way to an 0–3 series, which tracks with the\nSeason 1 note already on his file.</p>\n<p>One match day, and it was against the best team on the night. But nothing here yet contradicts\nthe pre-season read.</p>\n<p><em>Territorial figures are ballchasing.com proxies, not literal possession.</em></p>\n"
+      }
+    ]
+  },
+  "fortnite-flick-fc": {
+    "slug": "fortnite-flick-fc",
+    "intro": "",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>New club for Season 2, and the league&#39;s <strong>only all-rookie roster</strong> — LLellum, Sajar47 and\nTRS 1000 had never played an RPL game before Match Day 1.</li>\n<li>Roster: LLellum (captain, $15,000), Sajar47 ($5,719), TRS 1000 ($2,400). $624 left on the cap —\nthe tightest of any team.</li>\n<li>Built around LLellum, a Grand Champion I and the highest-ranked player in league history, well\nabove the previous ceiling.</li>\n</ul>\n"
+      },
+      {
+        "heading": "The draft",
+        "html": "<p>LLellum&#39;s $15,000 is an outlier in the most literal sense: it&#39;s above the $10,000 maximum the\nvalue model can normally produce, and he&#39;s handled as an Exempt case rather than through the\nusual valuation path. Auto-drafting him consumed nearly two-thirds of the cap before the auction\nstarted.</p>\n<p>That left $8,743 for two players, and the results diverged sharply from model expectations.\nSajar47 went for $5,719 against a $5,705 rank-seeded baseline — almost exactly at model.\nTRS 1000 went for $2,400 against a $4,845 baseline, roughly <strong>half price</strong>, the largest discount\nof the entire auction.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The most top-heavy roster in the league by a wide margin, and — going into Match Day 1 — the one\nwith the least evidence behind it, since no player had a single RPL game on record. Every other\nclub had at least one returning player to reason about.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Beat Bucky Irving FC 2–1. 11 goals for, 6 against.</p>\n<p>The series did not go the way the price tags suggested. LLellum opened with the best individual\ngame of the night — 2 goals, 1 assist, 3 saves, 728 score — and then declined in every subsequent\ngame: 728 → 395 → 319, finishing the decider with just an assist and no goals.</p>\n<p>Sajar47 ran the exact opposite arc: 420 → 473 → 671, and finished the series as its leading\nscorer by total Score (1,564, ahead of even LLellum&#39;s 1,442). The half-price signing, TRS 1000,\nclosed the series out with a <strong>3-goal Game 3</strong> — the first hat trick of Season 2 — and finished\nthe day a perfect 4-for-4 on goals-to-shots.</p>\n<p>So the $15,000 captain was outproduced by both of his cheaper teammates over the full series.\nThat&#39;s one match day, but it&#39;s the story of this series.</p>\n<p>The underlying numbers are less flattering than the result: Bucky Irving out-collected and\nout-stole them for boost, and inflicted 12 demos to Fortnite Flick&#39;s 1. They won the series while\nlosing most of the physical battle.</p>\n"
+      }
+    ]
+  },
+  "lawson-state": {
+    "slug": "lawson-state",
+    "intro": "",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>The league&#39;s only club with a title. Won the Season 1 championship with Astro, TLBoryczka and\nBlockymalrd, beating 999 in the Final.</li>\n<li>Astro returns as captain; <strong>both title-winning teammates left</strong>. TLBoryczka went to Own Goal FC\nfor $12,591 and Blockymalrd to Bucky Irving FC for $8,091.</li>\n<li>Roster: Astro (captain, $9,269), Aowtty ($4,157), Misnfrmd ($10,317). <strong>$0 left on the cap</strong> —\nthe only team to spend every dollar.</li>\n<li>Rebuilt around the two former Fire Water Gang players who lost to them in Season 1.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1",
+        "html": "<p>Lawson State&#39;s championship roster is the reason the Season 2 salary cap is what it is: the\n$23,743 cap is 110% of LS&#39;s final Season 1 roster value of $21,585.</p>\n<p>Astro finished Season 1 as statistically the #2 player in the league — 423.26 avg points, behind\nonly zPylo — and won the Golden Boot with 31 goals. Unlike zPylo, his team actually won the title.</p>\n"
+      },
+      {
+        "heading": "The draft",
+        "html": "<p>This is the most aggressive spend in the auction, and the hardest to explain from the numbers.</p>\n<p><strong>Misnfrmd cost $10,317 against a Season 1 Player Value of $1,000.</strong> That is a ~10× premium on the\nlowest-valued active player in the entire league — by far the largest gap in the draft, and not\nclose. Aowtty cost $4,157 against $1,797, a ~2.3× premium on the second-lowest-valued active\nplayer.</p>\n<p>Astro spent his entire cap reuniting the two Fire Water Gang players whose captain, zPylo, isn&#39;t\nreturning for Season 2 — and paid a large premium over model for both.</p>\n<p>The immediate consequence is visible in the current table: Lawson State has the <strong>lowest squad\nvalue in the league</strong> ($12,066), despite being the only team to spend the full cap. The model\nnever agreed with those prices, and it still doesn&#39;t.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The defending champion enters Season 2 with the biggest gap between what it spent and what the\nmodel thinks it bought. Either Astro knows something about Aowtty and Misnfrmd that a season of\nbox scores doesn&#39;t capture, or this is the draft&#39;s most expensive misread. There is no data yet\nto say which — Lawson State had the Match Day 1 bye.</p>\n<p>Worth noting fairly: Misnfrmd&#39;s Season 1 numbers came playing under a different captain on a\nteam that didn&#39;t reach the Final. Player value is measured individually, but it isn&#39;t produced in\nisolation.</p>\n"
+      },
+      {
+        "heading": "Season 2 — no games played yet",
+        "html": "<p>Lawson State was on bye for Match Day 1 and has yet to play a Season 2 series.</p>\n"
+      }
+    ]
+  },
+  "own-goal-fc": {
+    "slug": "own-goal-fc",
+    "intro": "",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>New club for Season 2, built by Bl4zeDaddy in his first season as a manager. He captained\nnothing in Season 1 — he played on 999 alongside madlabs and DrewAJC, all three of whom now\nmanage their own clubs.</li>\n<li>Roster: Bl4zeDaddy (captain, $6,736), TLBoryczka ($12,591), Spam God6450 ($3,025). $1,391 left\non the cap.</li>\n<li>Bought the single most expensive returning player in the draft, and the cheapest gamble\navailable, on the same roster.</li>\n</ul>\n"
+      },
+      {
+        "heading": "The draft",
+        "html": "<p>TLBoryczka at $12,591 was the 2nd-most expensive non-captain purchase of the entire auction, and\na ~1.5× premium on his Season 1 model value of $8,346. Unlike most of the draft&#39;s big gaps, this\none tracks: TLBoryczka finished Season 1 with the highest Player Value of any non-Champion-tier\nplayer, led the league in assists, and played more games than anyone. Paying above model for the\nmost complete two-way player available is a legible decision.</p>\n<p>Spam God6450 at $3,025 is the opposite kind of bet — a player with no Season 1 Player Value at\nall, because TTT was pulled from competition partway through the season and their values were\nvoided. His raw numbers over 7 games (411.71 avg points) would have been 3rd-best in the league\nhad they counted. $3,025 buys that upside with almost no downside risk.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The clearest &quot;spend to win now&quot; build in the league: one proven, expensive veteran anchoring a\ncheap flier and a mid-priced captain. It&#39;s the only roster where the most expensive player is\ndemonstrably the best player, rather than the most expensive player being a question mark.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Swept California Gurls 3–0. 11 goals for, 5 against — the best team on the night by any measure.</p>\n<p>The shape of the win is the interesting part. Own Goal FC recorded just <strong>4 saves across three\ngames</strong>, fewest of any team that played — not because the defense was bad, but because they\nbarely needed it. They spent the least time of any team in their own defensive third (43.8%) and\nthe most in the opponent&#39;s (22.6%). They had the ball, and the game, in the other end.</p>\n<p>The two-man split was stark. Bl4zeDaddy scored in all three games — 3-for-3, plus 2 assists — and\nrecorded <strong>zero saves</strong> across the entire series. Pure attack. TLBoryczka handled everything else:\n4 goals, 2 assists, and 3 of the team&#39;s 4 total saves, the only OG player with a save in every\ngame. Spam God6450&#39;s 3-goal Game 2 was the night&#39;s other standout.</p>\n<p>One caution flag: they also led the league in time spent capped at 100 boost (529.8 seconds),\nwhich is wasted resource. Against this opponent it cost nothing.</p>\n<p><em>Territorial figures are ballchasing.com proxies, not literal possession.</em></p>\n"
+      }
+    ]
+  }
+}
