@@ -189,6 +189,42 @@ a {
   color: var(--rpl-text-dim);
 }
 
+/* ---- tabs ----------------------------------------------------------------- */
+
+.tabs {
+  display: flex;
+  gap: var(--rpl-space-4);
+  flex-wrap: wrap;
+  margin-bottom: var(--rpl-space-4);
+  border-bottom: 1px solid var(--rpl-border);
+}
+
+.tabs__tab {
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  padding: var(--rpl-space-2) 0;
+  cursor: pointer;
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-text-faint);
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.tabs__tab:hover {
+  color: var(--rpl-text);
+}
+
+.tabs__tab--active {
+  color: var(--rpl-gold);
+  border-bottom-color: var(--rpl-gold-deep);
+}
+
 /* ---- panels & tables ------------------------------------------------------ */
 
 .panel {

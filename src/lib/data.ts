@@ -88,6 +88,24 @@ export function alumni(season: number = CURRENT_SEASON): Player[] {
   );
 }
 
+/**
+ * Every player in a season, grouped by status — the ones playing first, the
+ * ones sitting it out last — and alphabetical inside each group.
+ */
+const STATUS_ORDER = ["Active", "Exempt", "Inactive"];
+
+export function playersByStatus(season: number = CURRENT_SEASON): Player[] {
+  const group = (p: Player) => {
+    const i = STATUS_ORDER.indexOf(p.status ?? "");
+    return i === -1 ? STATUS_ORDER.length : i;
+  };
+  return [...getSeason(season).players].sort(
+    (a, b) =>
+      group(a) - group(b) ||
+      a.name.localeCompare(b.name, "en", { sensitivity: "base" })
+  );
+}
+
 export interface TeamRoster {
   code: string;
   name: string;
