@@ -587,3 +587,74 @@ a {
   line-height: 1.5;
   color: var(--rpl-text-dim);
 }
+
+/* ---- player profile prose -------------------------------------------------- */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rpl-space-6);
+}
+
+.profile__intro {
+  color: var(--rpl-text-dim);
+  font-size: 16px;
+}
+
+.profile__intro p:first-child {
+  margin-top: 0;
+}
+
+.profile__heading {
+  margin: 0 0 var(--rpl-space-3);
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-gold);
+}
+
+.profile__section {
+  max-width: 76ch;
+}
+
+.profile__section p {
+  margin: 0 0 var(--rpl-space-3);
+  color: var(--rpl-text-dim);
+  line-height: 1.65;
+}
+
+.profile__section p:last-child {
+  margin-bottom: 0;
+}
+
+.profile__section ul,
+.profile__section ol {
+  margin: 0 0 var(--rpl-space-3);
+  padding-left: var(--rpl-space-5);
+  color: var(--rpl-text-dim);
+  line-height: 1.65;
+}
+
+.profile__section li {
+  margin-bottom: var(--rpl-space-2);
+}
+
+.profile__section strong {
+  color: var(--rpl-text);
+  font-weight: 600;
+}
+
+.profile__section em {
+  color: var(--rpl-text);
+}
+
+.profile__section code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  color: var(--rpl-gold);
+  background: rgba(217, 178, 92, 0.08);
+  padding: 1px 5px;
+  border-radius: var(--rpl-radius-sm);
+}

@@ -8,6 +8,7 @@
 import season1 from "@/data/season1.json";
 import season2 from "@/data/season2.json";
 import league from "@/data/league.json";
+import profiles from "@/data/profiles.json";
 import { teamsForSeason } from "./teams";
 
 export interface PlayerTotals {
@@ -144,4 +145,24 @@ export function formatMoney(value: number | null): string {
 export function formatNum(value: number | null, digits = 2): string {
   if (value === null) return "—";
   return value.toFixed(digits);
+}
+
+/* ---- player profiles ------------------------------------------------------ */
+
+export interface ProfileSection {
+  heading: string;
+  /** Build-time HTML from `npm run profiles`. Not user input. */
+  html: string;
+}
+
+export interface Profile {
+  slug: string;
+  intro: string;
+  sections: ProfileSection[];
+}
+
+const PROFILES = profiles as Record<string, Profile>;
+
+export function profileBySlug(slug: string): Profile | undefined {
+  return PROFILES[slug];
 }

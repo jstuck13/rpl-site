@@ -1,0 +1,378 @@
+{
+  "aowtty": {
+    "slug": "aowtty",
+    "intro": "<p>Lawson State (S2), non-captain. Season 1: rostered on Fire Water Gang under captain zPylo.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on Fire Water Gang alongside captain zPylo and Misnfrmd.</li>\n<li>Season 2: bought by Astro (Lawson State) for $4,157 — reunited with former FWG teammate\nMisnfrmd on the new roster.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>22 games played. 9 goals, 18 assists, 15 saves, 39 shots, 5,481 total points.\nPer game: 0.41 goals, 0.82 assists, 0.68 saves, 1.77 shots, 249.14 avg points.\nRank: Diamond I (shared tier with drateRbmud). Season-end Player Value: $1,797 (Base Value\n$2,002, -$205 modifier, -6.8% Vs Rank Baseline).</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The clearest playmaker profile of any Season 1 returner: one of the lowest goal rates in the\nleague (0.41/game) paired with the 2nd-highest assist rate (0.82/game, just behind TLBoryczka&#39;s\n0.83) — a stark, near-total inversion of a scorer like zPylo, his own Season 1 captain. Everything\nabout the shape of this stat line says setup player, not finisher. His -6.8% Vs Rank Baseline is\nthe mirror of drateRbmud&#39;s +6.8% in their shared Diamond I tier — read as &quot;somewhat behind\ndrateRbmud&quot; within that comparison rather than a broad weakness, especially since low-volume\nscorers can look worse on a pure Avg Points metric that doesn&#39;t fully credit assists.</p>\n"
+      }
+    ]
+  },
+  "astro": {
+    "slug": "astro",
+    "intro": "<p>Captain, Lawson State (S1 and S2).</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: captain of Lawson State (LS), alongside TLBoryczka and Blockymalrd. LS won the\nSeason 1 championship (the Final was 999 vs. LS).</li>\n<li>Season 2: auto-drafted back as Lawson State&#39;s captain at his own Player Value ($9,269). Built\nthe roster out with Aowtty (Fire Water Gang alum, $4,157) and Misnfrmd (Fire Water Gang alum,\n$10,317) — LS spent its entire $23,743 cap down to $0, the only team to do so.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>27 games played. 31 goals, 13 assists, 41 saves, 89 shots, 11,428 total points.\nPer game: 1.15 goals, 0.48 assists, 1.52 saves, 3.30 shots, 423.26 avg points.\nRank: Champion I. Season-end Player Value: $9,269 (Base Value $9,228 + $41 modifier).</p>\n<p>League context: 423.26 avg points was 2nd-highest in RPL Season 1, behind only zPylo (439.05).\nWon Golden Boot (31 goals, most in the league). His 3.30 shots/game was 2nd-highest behind zPylo&#39;s\n4.55. Goal conversion (31 goals / 89 shots ≈ 35%) was notably efficient for that shot volume —\nsee the Astro-vs-zPylo comparison in <a href=\"/players/zpylo\">zPylo&#39;s profile</a>.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>A high-volume, high-efficiency finisher first — the shot count and goal total are both\ntop-of-league, and the conversion rate says he wasn&#39;t just shooting on volume, he was picking\ngood looks. Save numbers (1.52/game) are solidly mid-to-upper pack, so he wasn&#39;t offense-only.\nAssist rate (0.48/game) trails several other top players (TLBoryczka 0.83, Aowtty 0.82, NO LIGHT\n0.71) — the stat line reads as scorer/finisher more than primary playmaker. His Vs Rank Baseline\nmodifier (+1.4%, +$41) looks unremarkable but the comparison group was just himself and madlabs\n(Champion I, n=2 players) — not a meaningful signal either way, small-sample artifact rather than\na real read on him relative to peers.</p>\n<p>Net: statistically the #2 player in Season 1 behind zPylo, and unlike zPylo, his team actually won\nthe title. That combination (elite production + championship result) is the strongest asset in\nhis profile.</p>\n"
+      }
+    ]
+  },
+  "bl4ze-th3-man": {
+    "slug": "bl4ze-th3-man",
+    "intro": "<p>Season 1: rostered on Tommy Dead (TD) under captain NO LIGHT. <strong>Did not return for Season 2</strong>\n— not on any Season 2 roster or in the draft pool. This profile exists as a historical record so\nthere&#39;s a basis to work from if he ever comes back.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on Tommy Dead alongside captain NO LIGHT and drateRbmud. TD did not reach\nthe Season 1 Final.</li>\n<li>Not in the Season 2 draft pool or on any Season 2 roster as of the 2026-08-28 draft.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>18 games played. 11 goals, 5 assists, 22 saves, 25 shots, 4,681 total points.\nPer game: 0.61 goals, 0.28 assists, 1.22 saves, 1.39 shots, 260.06 avg points.\nRank: Platinum III — the only player at that rank in Season 1 (a singleton tier). Season-end\nPlayer Value: $2,375 (Base Value $2,375, 0% Vs Rank Baseline by construction — a rank tier with\nexactly one Active player returns a 0% baseline, since there&#39;s no peer to compare against).</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>A modest, below-average stat line relative to the league (260.06 avg points is on the low end of\nthe Active-status Season 1 pool), with the lowest shot volume among Tommy Dead&#39;s roster\n(1.39/game) and the lowest assist rate of the three TD players. His Vs Rank Baseline reads exactly\n0% not because he performed at a league-average level, but because Platinum III had no other\nplayer to compare him against in Season 1 — worth remembering that this number is a construction\nartifact, not a real signal either way.</p>\n<p>Also worth noting for context: this Season 1 rank average (Platinum III, $2,375.19) became one of\nthe reference points used for new-player starting values going into Season 2, per\n&#39;s recorded rank-average methodology.</p>\n"
+      }
+    ]
+  },
+  "bl4zedaddy": {
+    "slug": "bl4zedaddy",
+    "intro": "<p>Captain, Own Goal FC (S2). Season 1: rostered on 999 under captain madlabs. In-game name &quot;TTV\nBl4Ze D4ddy&quot;.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on 999 alongside captain madlabs and DrewAJC.</li>\n<li>Season 2: stepped up to captain/manage his own team, Own Goal FC, auto-drafted at his own\nPlayer Value ($6,736).</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>26 games played. 20 goals, 14 assists, 39 saves, 70 shots, 9,465 total points.\nPer game: 0.77 goals, 0.54 assists, 1.50 saves, 2.69 shots, 364.04 avg points.\nRank: Diamond II — a full tier below the Champion-rank group (zPylo, Astro, madlabs).\nSeason-end Player Value: $6,736 (Base Value $6,330, +$406 modifier, +13.5% Vs Rank Baseline).</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The headline number here is the +13.5% Vs Rank Baseline modifier — the largest positive\nrank-relative bump of any Season 1 returner on record so far. That stat specifically measures how\nfar above his own rank tier&#39;s average he performed, meaning Bl4zeDaddy wasn&#39;t just producing\ndecent raw numbers, he was meaningfully outperforming other Diamond II players. His saves rate\n(1.50/game) is strong — 3rd-best in the league behind NO LIGHT (2.05) and roughly level with\nAstro (1.52) and TLBoryczka (1.50) — paired with solid, not flashy, scoring (0.77 goals, 0.54\nassists per game). Read together: a well-rounded two-way player whose rank (Diamond II) looks low\nrelative to how he actually performed against his peers — the profile of someone whose assigned\nskill rank may understate his actual level.</p>\n"
+      },
+      {
+        "heading": "As a Season 2 manager",
+        "html": "<p>Own Goal FC&#39;s draft was built around spending to win now: he paired himself with TLBoryczka at\n$12,591 — the 2nd-most expensive non-captain buy of the entire auction, behind only Jart — and\nSpam God6450, a Season 1 TTT alum picked up cheap at $3,025. That&#39;s a real strategy read: pay top\ndollar for a proven, high-output veteran (TLBoryczka led the league in assists in Season 1 — see\nhis profile), then hedge the rest of the cap on a low-cost flier out of a team that got booted\npartway through Season 1 and hasn&#39;t had a real chance to prove anything since. OG closed the\nauction with $1,391 left unspent, so this wasn&#39;t a maximal all-in like Lawson State&#39;s, but it&#39;s\nclearly a &quot;win now with proven talent&quot; build rather than a rebuild.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: Own Goal FC swept California Gurls, 3–0.\nBl4zeDaddy&#39;s line across the 3 games: 3 goals, 2 assists, <strong>0 saves</strong>, 8 shots, 802 total score,\n37.5% shooting, 1 demo inflicted, 0 taken. He scored in all three games — a perfectly consistent\n1-1-1 line — while recording zero saves across the entire series.</p>\n<p>That zero-saves number is the standout, and it reframes the &quot;well-rounded two-way player&quot; read\nfrom his Season 1 profile above — at least for Match Day 1, this was a pure-attack role, with the\ndefensive/two-way work handled almost entirely by TLBoryczka (who logged 3 of the team&#39;s 4 total\nsaves). Whether that&#39;s a deliberate Season 2 role change (captain plays the front, TLBoryczka\ncovers the back) or just how this particular blowout series played out is an open question — the\nSeason 1 saves rate (1.50/game, 3rd-best in the league) suggests he&#39;s capable of two-way play, so\na 0-save series is a real change in shape worth watching over more match days.</p>\n"
+      }
+    ]
+  },
+  "blockymalrd": {
+    "slug": "blockymalrd",
+    "intro": "<p>Bucky Irving FC (S2), non-captain. Season 1: rostered on Lawson State under captain Astro.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on Lawson State (the eventual champions) alongside captain Astro and\nTLBoryczka.</li>\n<li>Season 2: bought by DrewAJC (Bucky Irving FC) for $8,091.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>24 games played. 17 goals, 14 assists, 20 saves, 51 shots, 7,472 total points.\nPer game: 0.71 goals, 0.58 assists, 0.83 saves, 2.13 shots, 311.33 avg points.\nRank: Diamond II (shared tier with Bl4zeDaddy and Misnfrmd). Season-end Player Value: $3,970\n(Base Value $4,128, -$158 modifier, -5.3% Vs Rank Baseline).</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>A solid, unspectacular Diamond II line — middle of the pack within his own rank tier. Of the\nthree Diamond II players on record, Bl4zeDaddy (+13.5%) clearly outperformed the tier, Misnfrmd\n(-30.1%) badly underperformed it, and Blockymalrd sits in between, modestly below tier average.\nNothing in the stat line stands out as a specific strength or weakness — a dependable rotation\npiece on a Season 1 championship roster, not a standout individual number.</p>\n<p>Worth flagging: DrewAJC&#39;s $8,091 for him is more than double his Season 1 model value ($3,970),\nsimilar in shape (though smaller in magnitude) to the Astro/Misnfrmd situation — a captain paying\na real premium over the formula&#39;s number for a known Season 1 quantity.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: Bucky Irving FC lost to Fortnite Flick FC, 1–2.\nBlockymalrd&#39;s line across the 3 games: 2 goals, 2 assists, 2 saves, 8 shots, 819 total score, 25%\nshooting, <strong>8 demos inflicted</strong> (a league-high for the day) and 0 taken.</p>\n<p>The demo number stands out — 8 demos inflicted across 3 games, more than any other player on\nMatch Day 1, and part of a bigger-picture Bucky Irving FC pattern (the team led the league in\ndemos inflicted, 12-to-1, despite losing the series). His scoring (2G/2A) was solid but not a\nstandout by itself; the physical, disruptive game is the new data point worth tracking against\nthe &quot;premium price&quot; question below.</p>\n"
+      }
+    ]
+  },
+  "draterbmud": {
+    "slug": "draterbmud",
+    "intro": "<p>Bucky Irving FC (S2), non-captain. Season 1: rostered on Tommy Dead (TD) under captain NO\nLIGHT.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on Tommy Dead alongside captain NO LIGHT and Bl4ze Th3 MaN. TD did not\nreach the Season 1 Final.</li>\n<li>Season 2: bought by DrewAJC (Bucky Irving FC) for $7,000. He&#39;s the only Tommy Dead alum on\na Season 2 roster — neither NO LIGHT nor Bl4ze Th3 MaN returned.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>21 games played. 18 goals, 8 assists, 20 saves, 44 shots, 6,437 total points.\nPer game: 0.86 goals, 0.38 assists, 0.95 saves, 2.10 shots, 306.52 avg points.\nRank: Diamond I (shared tier with Aowtty). Season-end Player Value: $4,168 (Base Value $3,963,\n+$205 modifier, +6.8% Vs Rank Baseline).</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>A solid, modestly-above-tier-average performer — his +6.8% Vs Rank Baseline is the exact mirror\nof Aowtty&#39;s -6.8% in the same two-player Diamond I tier, so read it as &quot;somewhat ahead of Aowtty&quot;\nwithin that shared comparison, not a huge standout in absolute terms. Balanced scoring/saves\nprofile without a specific standout category. DrewAJC paid $7,000 — a meaningful premium (about\n68%) over his $4,168 model value.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: Bucky Irving FC lost to Fortnite Flick FC, 1–2.\ndrateRbmud&#39;s line across the 3 games: 4 goals, 0 assists, 2 saves, 9 shots, 973 total score, 44.4%\nshooting, 1 demo inflicted, 0 taken. He led Bucky Irving FC in scoring for the series (2 goals in\neach of Games 2 and 3) and was clearly the team&#39;s primary offensive threat, ahead of Blockymalrd&#39;s\n2 goals and DrewAJC&#39;s 0.</p>\n<p>That&#39;s the first real evidence for the &quot;premium price&quot; open question below — DrewAJC&#39;s $7,000 buy\n(68% over model value) got the series&#39; most productive Bucky Irving scorer, even in a losing\nseries. Worth tracking whether that continues once the sample grows past one match day.</p>\n"
+      }
+    ]
+  },
+  "drewajc": {
+    "slug": "drewajc",
+    "intro": "<p>Captain/manager, Bucky Irving FC (S2). Season 1: rostered on 999 under captain madlabs.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on 999 alongside captain madlabs and Bl4zeDaddy.</li>\n<li>Season 2: auto-drafted as captain of his own team at his own Player Value ($3,063) — by far the\ncheapest captain of the six (the next-cheapest, Bl4zeDaddy, was more than double at $6,736).\nTeam was bid on and won at auction under the name &quot;Fire Water Gang,&quot; renamed to <strong>Bucky Irving\nFC</strong> after the draft completed. Built the roster entirely from Season 1 veterans: Blockymalrd\n($8,091, Lawson State alum) and drateRbmud ($7,000, Tommy Dead alum) — the only Season 2\nteam with zero rookies. $5,589 of the $23,743 cap left unspent, 2nd-most in the league.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>17 games played (fewest of any Active-status returner). 14 goals, 3 assists, 17 saves, 45 shots,\n5,084 total points.\nPer game: 0.82 goals, 0.18 assists, 1.00 saves, 2.65 shots, 299.06 avg points.\nRank: Diamond III (shared tier with TLBoryczka only). Season-end Player Value: $3,063 (Base Value\n$3,708, -$645 modifier, -21.5% Vs Rank Baseline).</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The weakest rate-stats among the returning Active-status veterans — his 0.18 assists/game is the\nlowest of anyone in the Season 1 dataset, and his -21.5% Vs Rank Baseline is a significant\nunderperformance. Worth noting: his rank tier (Diamond III) had exactly one other player —\nTLBoryczka, whose own +21.5% is the exact mirror image of DrewAJC&#39;s -21.5%. That&#39;s not a\ncoincidence of two independent measurements; with only two players in the tier, one&#39;s\nover-performance and the other&#39;s under-performance move symmetrically around the shared average.\nSo the fair read is &quot;meaningfully below TLBoryczka&quot; within their shared tier, not necessarily\n&quot;weak in absolute terms.&quot;</p>\n"
+      },
+      {
+        "heading": "As a Season 2 manager",
+        "html": "<p>Despite being the value model&#39;s lowest-rated returning captain, he built the league&#39;s only\nall-veteran, zero-rookie roster — a clear bet on chemistry and known quantities over unproven\nupside. Being the cheapest auto-draft also gave him more room under the cap than any other\ncaptain going in ($20,680 before other buys), yet he still left the 2nd-most unspent — a\ncomparatively conservative auction relative to the room he had.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: Bucky Irving FC lost to Fortnite Flick FC, 1–2.\nDrewAJC&#39;s line across the 3 games: 0 goals, 1 assist, 5 saves, 7 shots, 834 total score, 0.0%\nshooting, 3 demos inflicted, 1 taken.</p>\n<p>A quiet series individually — no goals on 7 shots, and the team&#39;s offense ran through drateRbmud\n(4 goals) and Blockymalrd (2 goals) instead of him. That&#39;s at least directionally consistent with\nthe open question already on file about whether his Season 1 assist-starved line (0.18/game,\nleague-low) reflects a real stylistic tendency rather than a fluke of his old teammates — one\nmatch day with 1 assist and 0 goals doesn&#39;t settle it, but it doesn&#39;t contradict it either. As a\nside note, his team (Bucky Irving FC) actually won the underlying resource battle in this series —\nmost boost collected/stolen and a 12-1 demo edge over Fortnite Flick FC — while still losing 1-2,\nso the series loss doesn&#39;t read as a Bucky Irving effort problem so much as a finishing one, and\nDrewAJC&#39;s own zero-goal game is part of that picture.</p>\n"
+      }
+    ]
+  },
+  "f1yte-bacon": {
+    "slug": "f1yte-bacon",
+    "intro": "<p>Captain, California Gurls (S2). New to RPL — no Season 1 history.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>New to RPL for Season 2. Auto-drafted as captain of California Gurls at his own Player Value,\n$8,655 — cap money already deducted at auction time (see the discrepancy note in\n: an earlier project draft had wrongly listed Killua as this\ncaptain slot; the live draft sheet confirmed F1yTe Bacon).</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: California Gurls lost to Own Goal FC, 0–3.\nF1yTe Bacon&#39;s line across the 3 games: 2 goals, 2 assists, 5 saves, 6 shots, 1,124 total score,\n33.3% shooting, 0 demos inflicted, 3 taken.</p>\n<p>He was quietly California Gurls&#39; best individual performer in a sweep loss — present in all three\ngames (334, 452, 338 score) without a single quiet outing, and the only CG player to register both\ngoals and multiple assists across the series. As a first-time captain, his own production held up\neven as the team went 0–3; the losing series looks more like a team-wide territorial/resource\ndeficit (see the recap&#39;s team section — CG had the league&#39;s least attacking-third time and most\ntime stuck at 0 boost) than an individual problem with his own game. First RPL appearance, so no\nprior baseline exists yet.</p>\n"
+      }
+    ]
+  },
+  "jart": {
+    "slug": "jart",
+    "intro": "<p>California Gurls (S2), non-captain. New to RPL — no Season 1 history.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>New to RPL for Season 2. Bought by F1yTe Bacon (California Gurls) for $12,689 at auction — the\nsingle most expensive non-captain purchase of the entire Season 2 draft (edging out\nTLBoryczka&#39;s $12,591).</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: California Gurls lost to Own Goal FC, 0–3.\nJart&#39;s line across the 3 games: 2 goals, 2 assists, 0 saves, 8 shots, 650 total score, 25%\nshooting, 0 demos inflicted, 1 taken.</p>\n<p>A modest opening series relative to the price tag — he did contribute in every game (1 goal, then\n1 goal, then 1 assist), but 650 total score was the lowest of California Gurls&#39; three players who\nplayed, and well behind F1yTe Bacon&#39;s 1,124. It&#39;s the first data point against the league&#39;s\npriciest non-captain buy, but one match day (and one sweep loss for the whole team) isn&#39;t enough\nto call the price a reach — worth tracking against a larger sample and against opponents other\nthan a very strong Own Goal FC.</p>\n"
+      }
+    ]
+  },
+  "llellum": {
+    "slug": "llellum",
+    "intro": "<p>Captain, Fortnite Flick FC (S2). New to RPL — no Season 1 history.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>New to RPL for Season 2. Ranked <strong>Grand Champion I</strong> — the highest-ranked player the league has\never had, well above the previous ceiling (zPylo, Champion II in Season 1).</li>\n<li>Auto-drafted as captain of Fortnite Flick FC at $15,000 — the highest captain price of the six,\nby a wide margin (next-highest, Astro, was $9,269).</li>\n<li><strong>Status: Exempt</strong> in RPL_Master_Tracker (not Active, not Inactive) — deliberately excluded from\nthe Base Value/Vs Rank Baseline formulas so his skill gap doesn&#39;t distort everyone else&#39;s\nnumbers. His Player Value is hardcoded at $15,000, above the model&#39;s normal $10,000 ceiling, to\nvisually flag that he&#39;s in a different tier. His raw game stats (goals/assists/saves/etc.) are\nstill tracked completely normally — only the value math is bypassed. See the anomaly doc for\nfull mechanics.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: Fortnite Flick FC beat Bucky Irving FC, 2–1.\nLLellum&#39;s line across the 3 games: 3 goals, 2 assists, 5 saves, 11 shots, 1,442 total score, 27.3%\nshooting, 1 demo inflicted, 5 taken. He also led the day in several nuanced categories: most boost\ncollected of any player (6,759), highest average speed (1,503), and most time supersonic (155.0s).</p>\n<p>Game-by-game, his own stat line actually shrank as the series went on — 728 (2G/1A/3 saves) in\nGame 1, then 395 (1G/0A/1 save), then 319 (0G/1A/1 save) in the decider. Game 1 was, on its own,\nthe single best individual performance logged by anyone on Match Day 1 — but the series-clinching\nproduction in Games 2 and 3 actually came from his teammates (TRS 1000&#39;s Game 3 hat trick,\nSajar47&#39;s rising line across all three games), not from him. First RPL appearance overall, so\nthere&#39;s no prior baseline to compare this against — worth watching whether the front-loaded\npattern (huge Game 1, tapering after) repeats on future match days, since one series isn&#39;t enough\nto call it a tendency.</p>\n"
+      }
+    ]
+  },
+  "madlabs": {
+    "slug": "madlabs",
+    "intro": "<p>Captain, 999 (S1 and S2).</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: captain of 999, alongside Bl4zeDaddy (&quot;TTV Bl4Ze D4ddy&quot;) and DrewAJC.</li>\n<li>Season 2: auto-drafted back as 999&#39;s captain at his own Player Value ($8,041). Kept the 999\nname, but his old Season 1 teammates both left — Bl4zeDaddy now captains Own Goal FC, DrewAJC\nnow captains Bucky Irving FC. Rebuilt around two players new to RPL: Killua ($5,590) and on\nrollr ($4,366). 999 finished the auction with the most cap space left unspent of any team,\n$5,746.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>26 games played. 26 goals, 19 assists, 30 saves, 79 shots, 10,396 total points.\nPer game: 1.00 goals, 0.73 assists, 1.15 saves, 3.04 shots, 399.85 avg points.\nRank: Champion I (paired with Astro as the league&#39;s only two Champion I players in Season 1).\nSeason-end Player Value: $8,041 (Base Value $8,082, -$41 modifier).</p>\n<p>League context: 399.85 avg points was 3rd-highest in RPL Season 1, behind zPylo (439.05) and\nAstro (423.26). His 0.73 assists/game was 2nd-highest in the league (behind TLBoryczka&#39;s 0.83,\njust ahead of Aowtty&#39;s 0.82). Goal conversion (26/79 ≈ 33%) is efficient, in the same range as\nAstro&#39;s.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The most balanced of Season 1&#39;s top tier. Where zPylo and Astro were shot-first scorers (zPylo\nespecially), madlabs put up the 3rd-best Avg Points in the league while also posting the\n2nd-highest assist rate — high scoring output <em>and</em> high playmaking on the same stat line, rather\nthan one at the expense of the other. His shot volume (3.04/game) is real but lower than zPylo&#39;s\nor Astro&#39;s, and his saves (1.15/game) are moderate rather than standout. Read together: less of a\npure volume shooter than his Champion I tier-mate Astro, more of an all-around contributor who\nscores, sets up teammates, and still shows up defensively.</p>\n"
+      }
+    ]
+  },
+  "misnfrmd": {
+    "slug": "misnfrmd",
+    "intro": "<p>Lawson State (S2), non-captain. Season 1: rostered on Fire Water Gang under captain zPylo.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on Fire Water Gang alongside captain zPylo and Aowtty.</li>\n<li>Season 2: bought by Astro (Lawson State) for <strong>$10,317</strong> — more than Astro&#39;s own captain value,\nand the single most-discussed price of the Season 2 auction (see below).</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>22 games played. 14 goals, 5 assists, 16 saves, 43 shots, 4,836 total points.\nPer game: 0.64 goals, 0.23 assists, 0.73 saves, 1.95 shots, 219.82 avg points — the <strong>lowest</strong>\nfull-season Avg Points of any Active-status Season 1 player now on a Season 2 roster.\nRank: Diamond II (shared tier with Bl4zeDaddy and Blockymalrd). Season-end Player Value: $1,000 —\nBase Value floor-clamped (raw formula would have landed near $97, per\n&#39;s verification notes), Vs Rank Baseline -30.1% ($-903\nmodifier), the largest negative modifier of any player in the dataset.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>By the numbers, Misnfrmd&#39;s Season 1 was the weakest of any player returning for Season 2 —\nlowest points average in the returning pool, worst rank-relative performance in the whole\nleague, and the only returner whose value hit the model&#39;s absolute $1,000 floor. That makes\nAstro&#39;s $10,317 bid for him — more than 10x his season-end model value — the largest gap between\nprice paid and model-driven value anywhere in the Season 2 draft, LLellum&#39;s exempted case aside.\nThis isn&#39;t a case where the stats offer a supporting explanation; whatever justified that price\nlives entirely in the meta-game layer, not the box score.</p>\n"
+      }
+    ]
+  },
+  "no-light": {
+    "slug": "no-light",
+    "intro": "<p>Season 1: captain of Tommy Dead (TD). <strong>Did not return for Season 2</strong> — not on any Season 2\nroster or in the draft pool. This profile exists as a historical record so there&#39;s a basis to\nwork from if he ever comes back.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: captain of Tommy Dead, alongside drateRbmud and Bl4ze Th3 MaN. TD did not reach\nthe Season 1 Final (999 vs. Lawson State).</li>\n<li>Not in the Season 2 &quot;SEASON 2 DRAFT&quot; pool sheet or on any Season 2 roster as of the 2026-08-28\ndraft. drateRbmud is the only Tommy Dead alum who returned.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>21 games played. 13 goals, 15 assists, 43 saves, 48 shots, 7,940 total points.\nPer game: 0.62 goals, 0.71 assists, 2.05 saves (highest in the league), 2.29 shots, 378.10 avg\npoints.\nRank: Diamond II (shared tier with Bl4zeDaddy, Blockymalrd, and Misnfrmd — 4 players). Season-end\nPlayer Value: $7,673 (Base Value $7,018, +$655 modifier, +21.8% Vs Rank Baseline — the largest\npositive modifier of any Season 1 player, edging out Bl4zeDaddy&#39;s +13.5% in the same tier).\nWon Golden Gloves (highest Avg Saves in the league, 2.05/game).</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The league&#39;s clearest defensive standout — highest save rate of anyone in Season 1 by a real\nmargin (next closest was Bl4zeDaddy/TLBoryczka at 1.50), paired with a genuinely strong assist\nrate (0.71/game, 3rd-best in the league) and modest goal-scoring. That&#39;s a last-man/support\ndefender who also creates offense through distribution rather than finishing himself — a\ndifferent shape than any of the returning Diamond II players. His +21.8% Vs Rank Baseline is the\nsingle largest rank-relative overperformance recorded in Season 1, ahead of even Bl4zeDaddy&#39;s\nstandout number in the same tier.</p>\n"
+      }
+    ]
+  },
+  "sajar47": {
+    "slug": "sajar47",
+    "intro": "<p>Fortnite Flick FC (S2), non-captain. New to RPL — no Season 1 history.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>New to RPL for Season 2. Bought by LLellum (Fortnite Flick FC) for $5,719 at auction.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: Fortnite Flick FC beat Bucky Irving FC, 2–1.\nSajar47&#39;s line across the 3 games: 4 goals, 3 assists, 8 saves, 7 shots, 1,564 total score, 57.1%\nshooting, 0 demos inflicted, 6 taken.</p>\n<p>His 1,564 total Score was the highest of any player on Match Day 1 — ahead of even LLellum&#39;s\n1,442 — and his game-by-game trend ran the opposite direction from his captain&#39;s: 420 (2G/1A) in\nGame 1, then 473 (0G/1A/4 saves, a defense-heavy game), then 671 (2G/1A) in the decider. That\nrising arc, peaking in the series-deciding Game 3, makes a real case that he — not the marquee\nGrand Champion signing — was Fortnite Flick FC&#39;s most consistently productive player across the\nfull series. First RPL appearance, so no prior baseline; worth tracking whether this level holds\nup over more match days.</p>\n"
+      }
+    ]
+  },
+  "spam-god6450": {
+    "slug": "spam-god6450",
+    "intro": "<p>Own Goal FC (S2), non-captain. Season 1: rostered on TTT under captain YoBoiHyperr.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on TTT, the team that was booted from the tournament partway through the\nseason (see &#39;s note on the general pattern of RPL\ndecisions being revisited, and personal-memory record of the TTT removal). TTT is marked\nInactive in the tracker; Player Value is voided to N/A for its players, raw stats retained.</li>\n<li>Season 2: bought by Bl4zeDaddy (Own Goal FC) for $3,025 — a low-cost pickup out of a team that\nnever finished its season.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>7 games played (TTT&#39;s season ended early). 8 goals, 3 assists, 11 saves, 14 shots, 2,882 total\npoints.\nPer game: 1.14 goals, 0.43 assists, 1.57 saves, 2.00 shots, <strong>411.71 avg points</strong>.\nStatus: Inactive (TTT), Player Value officially N/A/voided — not a counted Season 1 value despite\nthe strong rate stats.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>Genuinely one of the most interesting small-sample lines on record: 411.71 avg points over 7\ngames would rank 3rd in the entire league (between Astro&#39;s 423.26 and madlabs&#39; 399.85) if it were\na full, counted season. But it&#39;s a 7-game sample from a team that got removed from competition\nbefore it could be tested at real volume, and the tracker treats it as voided rather than a real\nPlayer Value — so this can&#39;t be weighted the same as a full season&#39;s evidence. Worth tracking\nwhether Season 2 confirms or complicates this read.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: Own Goal FC swept California Gurls, 3–0.\nSpam God6450&#39;s line across the 3 games: 4 goals, 3 assists, 1 save, 9 shots, 1,042 total score,\n44.4% shooting, 1 demo inflicted, 1 taken. Game 2 was his standout — a 3-goal game, his best\nindividual performance of the series.</p>\n<p>This is the first real Season 2 data point on the open question below, and it leans toward\nconfirming rather than complicating the Season 1 read: a hot, efficient scoring game (Game 2&#39;s\nhat trick in particular) is exactly the kind of burst his 411.71-avg-points TTT sample predicted.\nStill just one match day against one opponent, so not proof, but it&#39;s a genuine signal in the\npredicted direction rather than a regression.</p>\n"
+      }
+    ]
+  },
+  "tlboryczka": {
+    "slug": "tlboryczka",
+    "intro": "<p>Own Goal FC (S2), non-captain. Season 1: rostered on Lawson State under captain Astro.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on Lawson State (the eventual champions) alongside captain Astro and\nBlockymalrd.</li>\n<li>Season 2: bought by Bl4zeDaddy (Own Goal FC) for $12,591 — the 2nd-most expensive non-captain\npurchase of the entire draft, behind only Jart ($12,689).</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>30 games played — the most of any player in the league. 27 goals, 25 assists, 45 saves, 87 shots,\n11,762 total points.\nPer game: 0.90 goals, 0.83 assists (highest rate in the league), 1.50 saves, 2.90 shots, 392.07\navg points — 4th-highest in the league, behind only zPylo, Astro, and madlabs.\nRank: Diamond III (shared tier with DrewAJC only). Season-end Player Value: $8,346 (Base Value\n$7,701, +$645 modifier, +21.5% Vs Rank Baseline) — the highest Player Value of any non-Champion-\ntier player in Season 1, ahead of Bl4zeDaddy and well ahead of DrewAJC.\nWon Golden Laces (most assists in the league, 25 total).</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The most complete stat line in the league outside the top-3 Champion-tier players. Most games\nplayed of anyone (durability/reliability across a full season), league-leading assist rate\n(playmaking), and a top-4 Avg Points finish — scoring and setting up teammates at once, similar\nin shape to madlabs&#39; balanced profile. His +21.5% Vs Rank Baseline is the exact mirror of\nDrewAJC&#39;s -21.5% in the same two-player Diamond III tier — he&#39;s the one pulling that tier&#39;s\naverage up. The $12,591 Own Goal FC paid for him tracks cleanly with a stat line this strong;\nthere&#39;s no mystery in this price the way there is with some other Season 2 buys.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: Own Goal FC swept California Gurls, 3–0.\nTLBoryczka&#39;s line across the 3 games: 4 goals, 2 assists, 3 saves, 8 shots, 1,247 total score,\n50% shooting, 4 demos inflicted, 1 taken. He scored in every game of the series (1, 2, 1) and was\nthe only Own Goal FC player with a recorded save in every game — the team&#39;s total was just 4\nsaves across 3 games, and 3 of those 4 were his.</p>\n<p>Opened Season 2 exactly the way his Season 1 file predicted: the most complete two-way stat line\non the team, contributing goals, assists, and (essentially) all of the team&#39;s defensive stops\nwhile Bl4zeDaddy played a pure-attack role beside him. One match day, but it&#39;s a clean match for\nthe &quot;most complete player outside the Champion tier&quot; read already on file from Season 1.</p>\n"
+      }
+    ]
+  },
+  "trs-1000": {
+    "slug": "trs-1000",
+    "intro": "<p>Fortnite Flick FC (S2), non-captain. New to RPL — no Season 1 history.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>New to RPL for Season 2. Bought by LLellum (Fortnite Flick FC) for $2,400 at auction — the\ncheapest of Fortnite Flick FC&#39;s three auction buys.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: Fortnite Flick FC beat Bucky Irving FC, 2–1.\nTRS 1000&#39;s line across the 3 games: 4 goals, 1 assist, 2 saves, 4 shots, 985 total score, <strong>100%\nshooting</strong> (4 goals on 4 shots — every shot he took found the net).</p>\n<p>Game-by-game: 216 (0G/1A) in Game 1, 298 (1G/0A) in Game 2, then a 3-goal Game 3 (471 score) that\nclosed out the series after Bucky Irving had leveled it 1–1 — the single biggest scoring\nindividual game on the day&#39;s second-decider and the series-defining moment of the FF-BI matchup.\nFirst RPL appearance, so there&#39;s no Season 1 baseline; the perfect shots-to-goals rate is a small\nsample (4 shots total) and worth watching whether it holds as volume increases.</p>\n"
+      }
+    ]
+  },
+  "ugadawg50": {
+    "slug": "ugadawg50",
+    "intro": "<p>California Gurls (S2), non-captain. Season 1: rostered on TTT under captain YoBoiHyperr.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: played on TTT, the team booted from the tournament partway through the season. TTT is\nmarked Inactive in the tracker; Player Value voided to N/A, raw stats retained.</li>\n<li>Season 2: bought by F1yTe Bacon (California Gurls) for $900 — the single cheapest price paid\nfor any player in the entire Season 2 auction.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>7 games played (TTT&#39;s season ended early). 2 goals, 2 assists, 3 saves, 13 shots, 1,000 total\npoints.\nPer game: 0.29 goals, 0.29 assists, 0.43 saves, 1.86 shots, 142.86 avg points — by a wide margin\nthe weakest per-game output of any player with recorded Season 1 stats (next-lowest is\nMisnfrmd&#39;s 219.82).\nStatus: Inactive (TTT), Player Value officially N/A/voided.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The weakest recorded Season 1 stat line in the league, from the shortest, most disrupted stint —\n7 games on a team that was removed from the tournament. Unlike Spam God6450&#39;s case, there&#39;s no\ntension between the price and the numbers here: the league&#39;s cheapest Season 2 buy matches its\nweakest recorded stat line cleanly. The open question is upside, not explanation — whether a\nfresh team and a full season change the picture, or whether TTT&#39;s roster was simply overmatched.</p>\n"
+      },
+      {
+        "heading": "Season 2 — Match Day 1 (2026-09-02)",
+        "html": "<p>Series: California Gurls lost to Own Goal FC, 0–3.\nUgadawg50&#39;s line across the 3 games: 1 goal, 0 assists, 2 saves, 4 shots, 451 total score, 25%\nshooting, 2 demos inflicted, 2 taken. His Game 1 score of 74 was the single lowest individual\nscore logged by anyone on Match Day 1.</p>\n<p>So far, no surprises relative to the Season 1 file — the league&#39;s cheapest-ever buy posted the\nsoftest individual series of the day on a team that lost all three games. That&#39;s one match day of\nevidence layered onto a 7-game Season 1 sample, so still early, but it hasn&#39;t complicated the\n&quot;weakest recorded line in the league&quot; read yet.</p>\n"
+      }
+    ]
+  },
+  "yoboihyperr": {
+    "slug": "yoboihyperr",
+    "intro": "<p>Season 1: captain of TTT. <strong>Did not return for Season 2</strong> — not on any Season 2 roster or in the\ndraft pool. This profile exists as a historical record so there&#39;s a basis to work from if he ever\ncomes back.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: captain of TTT, alongside Spam God6450 and Ugadawg50. TTT was booted from the\ntournament partway through Season 1; schedule was rebalanced after its removal. Status in the\ntracker is Inactive, Player Value voided to N/A, raw stats retained.</li>\n<li>Per &#39;s recorded subbing history, he subbed for <strong>Lawson State</strong> at some\npoint during Season 1 (his stats from that game weren&#39;t credited to either team, per the\nstandard sub rule) — notable since that means TTT&#39;s own captain filled in for the team that\nwent on to win the championship.</li>\n<li>Not in the Season 2 draft pool or on any Season 2 roster as of the 2026-08-28 draft.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>7 games played (TTT&#39;s season ended early). 6 goals, 3 assists, 13 saves, 30 shots, 3,153 total\npoints.\nPer game: 0.86 goals, 0.43 assists, 1.86 saves, 4.29 shots, <strong>450.43 avg points</strong> — numerically\nthe <em>highest</em> Avg Points of any player in the Season 1 dataset, ahead of even zPylo&#39;s 439.05\nMVP-winning average. Not counted as MVP-eligible because of TTT&#39;s Inactive/voided status and the\nsmall 7-game sample.</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The most extreme version of the &quot;TTT what-if&quot; story — a higher per-game scoring pace than the\nleague&#39;s actual Season 1 MVP, over a 7-game sample that ended when his team got removed from\ncompetition. High shot volume (4.29/game, 2nd only to zPylo&#39;s 4.55) paired with strong saves\n(1.86/game) suggests real two-way involvement, but the sample is too short and the competitive\ncontext too disrupted to treat this as equivalent to a full season&#39;s evidence. Worth keeping on\nrecord precisely because the number is eye-catching, not because it should be taken at face\nvalue.</p>\n"
+      }
+    ]
+  },
+  "zpylo": {
+    "slug": "zpylo",
+    "intro": "<p>Captain, Fire Water Gang (Season 1 only). <strong>Inactive for Season 2 — not on any Season 2 roster.</strong>\nThis profile is institutional memory / career record more than a season preview.</p>\n",
+    "sections": [
+      {
+        "heading": "Identity",
+        "html": "<ul>\n<li>Season 1: captain of Fire Water Gang (FWG), alongside Aowtty and Misnfrmd (both now on Lawson\nState for Season 2).</li>\n<li>zPylo is not playing Season 2. Not in the Season 2 draft pool or\non any roster.</li>\n</ul>\n"
+      },
+      {
+        "heading": "Season 1 stats",
+        "html": "<p>22 games played. 28 goals, 6 assists, 30 saves, 100 shots, 9,659 total points.\nPer game: 1.27 goals, 0.27 assists, 1.36 saves, 4.55 shots, 439.05 avg points.\nRank: Champion II — the rank ceiling of the league in Season 1 (before LLellum&#39;s Grand Champion I\narrived in Season 2). Season-end Player Value: $10,000, the model&#39;s hard ceiling.</p>\n<p>League context: won Season MVP (highest Avg Points in RPL Season 1, 439.05 — ahead of Astro&#39;s\n423.26). Highest shot volume in the league by a wide margin (4.55/game; next closest was Astro at\n3.30). Highest goals/game (1.27) in the league. Lowest assist rate among regular starters\n(0.27/game, essentially tied with Bl4ze Th3 MaN&#39;s 0.28 for last).</p>\n"
+      },
+      {
+        "heading": "What the numbers say",
+        "html": "<p>The most statistically dominant player RPL has produced to date, by a clear margin — Season MVP,\n$10,000 value, rank ceiling of the league. But the shape of his production is distinct from\nAstro&#39;s: zPylo scored more goals per game largely by shooting far more often (28 goals on 100\nshots ≈ 28% conversion) rather than by finishing more efficiently — Astro shot less (89) and\nconverted more of it (≈35%). Read together: zPylo is the higher-volume, more ball-dominant\nplayer; Astro the more efficient one. zPylo&#39;s assist rate is the lowest of any regular starter,\nand his save involvement (1.36/game) is middling — a stat line that says shot-first, ball-hungry\nstriker more than a distributor or defensive anchor.</p>\n<p>One more thing worth keeping on record: for all that individual output, Fire Water Gang did not\nreach the Season 1 Final (999 vs. Lawson State) — the league&#39;s clearest statistical standout did\nnot get his team to the title series. Worth being careful with that framing since it&#39;s a 3-player\nteam result, not a solo failing, but it&#39;s a real thread in the story of his one RPL season.</p>\n"
+      }
+    ]
+  }
+}

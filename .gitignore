@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Player profile sources — internal working notes, not for the repo
+data/raw/profiles/

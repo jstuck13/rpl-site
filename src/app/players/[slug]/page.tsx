@@ -9,6 +9,7 @@ import {
   formatNum,
   playerBySlug,
   playerHistory,
+  profileBySlug,
   type Player,
 } from "@/lib/data";
 import { teamName } from "@/lib/teams";
@@ -150,6 +151,34 @@ function SeasonBlock({ season, player }: { season: number; player: Player }) {
   );
 }
 
+/**
+ * The profile write-ups, rendered from HTML generated at build time by
+ * `npm run profiles`. The source is Jacob's own profile documents, run through
+ * a strip pass that removes his internal working notes — never user input, and
+ * never fetched at runtime.
+ */
+function ProfileBlock({ slug }: { slug: string }) {
+  const profile = profileBySlug(slug);
+  if (!profile) return null;
+
+  return (
+    <section className="profile">
+      {profile.intro && (
+        <div
+          className="profile__intro"
+          dangerouslySetInnerHTML={{ __html: profile.intro }}
+        />
+      )}
+      {profile.sections.map((section) => (
+        <div key={section.heading} className="profile__section">
+          <h2 className="profile__heading">{section.heading}</h2>
+          <div dangerouslySetInnerHTML={{ __html: section.html }} />
+        </div>
+      ))}
+    </section>
+  );
+}
+
 export default async function PlayerPage({
   params,
 }: {
@@ -202,6 +231,8 @@ export default async function PlayerPage({
           their in-game rank rather than carried forward from real results.
         </p>
       )}
+
+      <ProfileBlock slug={slug} />
 
       {[...history].reverse().map(({ season, player }) => (
         <SeasonBlock key={season} season={season} player={player} />
