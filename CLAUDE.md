@@ -33,10 +33,35 @@ layout moved. If that becomes a recurring nuisance, the fix is a hidden flat
 `WEB_EXPORT` tab in the sheet — pure formula references, one row per player, no
 merges — and point the parser at that instead.
 
-**Hand-maintained** — `schedule.json`, `results.json`. The tracker holds
-cumulative player stats, not per-series scorelines, so match-day results are
-entered by hand from the recaps. Logging a match day means updating both the
-tracker (for values) and `results.json` (for scores).
+**Hand-maintained** — `schedule.json`, `results.json`, `next-up.json`. The
+tracker holds cumulative player stats, not per-series scorelines, so match-day
+results are entered by hand from the recaps. Logging a match day means updating
+both the tracker (for values) and `results.json` (for scores).
+
+**Built from markdown** — `profiles.json`, `team-profiles.json`, `recaps.json`.
+Sources live in gitignored `data/raw/` directories and are drafted from the RPL
+OPS project docs, so each has a build script that strips internal notes and
+**fails rather than publishing** if any survive (`npm run profiles`,
+`npm run recaps`). `src/content/join.md` is the exception: it's public copy from
+the start, so it's committed and read straight at build time.
+
+### What a match night costs you
+
+Two edits, not one, and the second is the one that gets forgotten:
+
+1. Drop the recap markdown in `data/raw/recaps/`, then `npm run recaps`.
+2. Set `src/data/next-up.json` to the following night — or back to
+   `{"series": []}` when nothing is scheduled.
+
+`next-up.json` is separate from `schedule.json` on purpose: the pool is
+effectively static and this changes every match night, so a hurried edit here
+can't corrupt the pool. The hero **self-heals** when step 2 is missed — if the
+newest recap covers the same clubs the block advertises, the night has already
+happened and the block hides itself rather than advertising a match that's in
+the past. A pairing that isn't in `remainingLineups()` only warns: Jacob may
+schedule something off-pool, and a hero field must never break a deploy.
+
+Worth folding both steps into one `npm run matchday` eventually.
 
 ### Tracker quirks the parser handles
 
@@ -68,7 +93,9 @@ next match day.
   two legs of the double round robin), so playing it once retires one copy.
 - The UI must never imply a fixed calendar or reference lineup numbers. An
   earlier version said "the Day 9 slate was played first" and Jacob explicitly
-  asked for that rigidity removed.
+  asked for that rigidity removed. `build-recaps.mjs` now **fails the build** on
+  a bare "Day 3" or "lineup 3" in recap copy, so a draft can't reintroduce it —
+  "Match Day 3" is fine, since that's the order nights were actually played.
 
 ## Design system
 
@@ -100,11 +127,13 @@ as real tokens would let the Discord graphics use them too.
 
 ```
 src/data/      generated + hand-maintained JSON (the only data source)
+src/content/   join.md — public copy, committed, read at build time
 src/lib/       data.ts (players/values), season.ts (schedule/results/standings),
-               teams.ts (team registry)
+               teams.ts (team registry), recaps.ts, next-up.ts
 src/ds/        vendored design system — treat as read-only, re-sync from source
-src/app/       routes: /, /standings, /schedule, /leaderboard, /teams, /players
-scripts/       parse-tracker.mjs
+src/app/       routes: /, /standings, /schedule, /recaps, /leaderboard, /teams,
+               /players, /join
+scripts/       parse-tracker.mjs, build-profiles.mjs, build-recaps.mjs
 ```
 
 Standings are **computed** from game scores in `season.ts`, never stored, so
@@ -119,17 +148,20 @@ present it as a ruling.
 - Nuanced stats hub — boost economy, possession/territory, demos, movement.
   Source is a separate "RPL Season 2 Nuanced Team & Player Comparison" Google
   Sheet, not the tracker.
-- Player profile prose. Jacob has ~20 written player profiles in his Claude
-  project (RPL OPS, under `claude/players/`) that aren't on the site yet; player
-  pages are stats-only. They'd need to be brought into the repo as content.
-- Season 1 archive views. The data is parsed and shipped, just not surfaced.
+- Season 1 archive views beyond the players table. Season 1 data is parsed and
+  shipped, and `/players` has a season tab for it, but standings, schedule and
+  club pages are Season 2 only.
+- Value/market charting. Deliberately deferred until four or five match days
+  exist to plot — two points is not a chart.
 
 ## Commands
 
 ```bash
-npm run dev     # http://localhost:3000
-npm run data    # regenerate src/data/*.json from data/raw/tracker.json
-npm run build   # production build — always run before pushing
+npm run dev      # http://localhost:3000
+npm run data     # regenerate src/data/*.json from data/raw/tracker.json
+npm run profiles # player + team profiles from data/raw/profiles/
+npm run recaps   # match day recaps from data/raw/recaps/
+npm run build    # production build — always run before pushing
 ```
 
 ## Deploy gotcha

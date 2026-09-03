@@ -16,6 +16,7 @@ const NAV = [
   { href: "/", label: "Home" },
   { href: "/standings", label: "Standings" },
   { href: "/schedule", label: "Schedule" },
+  { href: "/recaps", label: "Recaps" },
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/teams", label: "Teams" },
   { href: "/players", label: "Players" },
@@ -38,6 +39,9 @@ export default function RootLayout({
                   {item.label}
                 </Link>
               ))}
+              <Link href="/join" className="site-nav__cta">
+                Play in RPL
+              </Link>
             </nav>
           </div>
         </header>
@@ -46,7 +50,10 @@ export default function RootLayout({
 
         <footer className="site-footer">
           <div className="shell">
-            Rocket Premier League · values from RPL_Master_Tracker
+            Rocket Premier League · values from RPL_Master_Tracker ·{" "}
+            <Link href="/join" className="site-footer__link">
+              play in the next season
+            </Link>
           </div>
         </footer>
       </body>

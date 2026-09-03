@@ -6,9 +6,14 @@ import {
   rosters,
 } from "@/lib/data";
 import { DAYS_PLAYED, DAYS_TOTAL, goalDiff, standings } from "@/lib/season";
+import { formatDate, latestRecap } from "@/lib/recaps";
+import { formatTime, nextUp } from "@/lib/next-up";
+import { teamName } from "@/lib/teams";
 import { PlayerTable } from "@/components/PlayerRow";
 
 export default function HomePage() {
+  const recap = latestRecap();
+  const next = nextUp();
   const board = leaderboard();
   const top = board.slice(0, 8);
   const squads = rosters();
@@ -30,6 +35,62 @@ export default function HomePage() {
           cap. {DAYS_PLAYED} of {DAYS_TOTAL} match days played — Player Value
           recalculates from every logged match.
         </p>
+
+        {(recap || next) && (
+          <div className="hero-blocks">
+            {recap && (
+              <article className="hero-block">
+                <p className="stat__label">What just happened</p>
+                <p className="hero-block__headline">{recap.headline}</p>
+                <p className="hero-block__meta">
+                  Match Day {recap.matchDay} · {formatDate(recap.date)}
+                </p>
+                <Link
+                  href={`/recaps/${recap.matchDay}`}
+                  className="section__link"
+                >
+                  Read the recap →
+                </Link>
+              </article>
+            )}
+
+            {next && (
+              <article className="hero-block">
+                <p className="stat__label">What&apos;s next</p>
+                <ul className="hero-block__series">
+                  {next.series.map((series) => (
+                    <li key={series.clubs.join("+")}>
+                      {series.clubs.map((code, i) => (
+                        <span key={code}>
+                          {i > 0 && <span className="hero-block__vs">v</span>}
+                          {teamName(code)}
+                        </span>
+                      ))}
+                    </li>
+                  ))}
+                </ul>
+                <p className="hero-block__meta">
+                  {next.date
+                    ? [formatDate(next.date), formatTime(next)]
+                        .filter(Boolean)
+                        .join(" · ")
+                    : "Date TBD"}
+                </p>
+                {next.note && <p className="hero-block__meta">{next.note}</p>}
+                {next.watchUrl && (
+                  <a
+                    href={next.watchUrl}
+                    className="section__link"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Watch →
+                  </a>
+                )}
+              </article>
+            )}
+          </div>
+        )}
       </section>
 
       <section>

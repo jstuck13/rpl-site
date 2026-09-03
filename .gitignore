@@ -46,3 +46,12 @@ next-env.d.ts
 data/raw/profiles/
 data/raw/*-draft.md
 data/raw/*.zip
+
+# Recap sources — drafted from the same project docs, so they get the same
+# treatment: gitignored in, stripped by `npm run recaps`, committed only as
+# src/data/recaps.json.
+data/raw/recaps/
+
+# Inbox for handoff drops from Cowork sessions. They carry copies of the recap
+# markdown, so they stay out of the repo for the same reason data/raw does.
+handoff/

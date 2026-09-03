@@ -108,6 +108,60 @@ a {
   border-bottom-color: var(--rpl-gold-deep);
 }
 
+/* The one persistent recruiting CTA. Gold so it reads as an action rather than
+   another section of the site, quiet enough not to shout over the nav. */
+.site-nav__cta {
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-gold);
+  padding: var(--rpl-space-2) 0;
+  border-bottom: 2px solid transparent;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.site-nav__cta:hover {
+  color: var(--rpl-gold-bright);
+  border-bottom-color: var(--rpl-gold-deep);
+}
+
+.site-footer__link {
+  color: var(--rpl-gold);
+}
+
+.site-footer__link:hover {
+  color: var(--rpl-gold-bright);
+}
+
+.join-cta {
+  display: flex;
+  align-items: center;
+  gap: var(--rpl-space-4);
+  flex-wrap: wrap;
+  margin-top: var(--rpl-space-5);
+}
+
+.join-cta__button {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  padding: var(--rpl-space-3) var(--rpl-space-5);
+  border-radius: var(--rpl-radius-pill);
+  border: 1px solid var(--rpl-gold-deep);
+  background: var(--rpl-gold-gradient);
+  color: var(--rpl-bg);
+}
+
+.join-cta__button:hover {
+  border-color: var(--rpl-gold-bright);
+}
+
 .site-footer {
   border-top: 1px solid var(--rpl-border);
   padding: var(--rpl-space-5) 0 var(--rpl-space-6);
@@ -684,6 +738,194 @@ a {
 
 .profile__section em {
   color: var(--rpl-text);
+}
+
+/* ---- recaps ---------------------------------------------------------------- */
+
+.recap-card {
+  background: var(--rpl-panel-gradient);
+  border: 1px solid var(--rpl-border);
+  border-radius: var(--rpl-radius-lg);
+  padding: var(--rpl-space-4) var(--rpl-space-5) var(--rpl-space-5);
+  box-shadow: var(--rpl-shadow-bar);
+}
+
+.recap-card__title {
+  margin: 0 0 var(--rpl-space-2);
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+}
+
+.recap-card__title a:hover {
+  color: var(--rpl-gold-bright);
+}
+
+.recap-card__subtitle {
+  margin: 0 0 var(--rpl-space-3);
+  color: var(--rpl-text-faint);
+  font-size: 13px;
+}
+
+.recap-card__headline {
+  margin: 0 0 var(--rpl-space-4);
+  color: var(--rpl-text-dim);
+  max-width: 68ch;
+}
+
+.recap-card__clubs {
+  display: flex;
+  align-items: center;
+  gap: var(--rpl-space-3);
+  flex-wrap: wrap;
+}
+
+.recap__title {
+  font-size: clamp(28px, 5vw, 42px);
+  margin-bottom: var(--rpl-space-3);
+  text-transform: none;
+}
+
+/* The recap body is build-time HTML from markdown, so it's styled by element
+   rather than by class. Same prose measure as the player profiles. */
+.recap {
+  max-width: 76ch;
+}
+
+.recap h2 {
+  margin: var(--rpl-space-6) 0 var(--rpl-space-3);
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 22px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-gold);
+}
+
+.recap h3 {
+  margin: var(--rpl-space-5) 0 var(--rpl-space-2);
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-text);
+}
+
+.recap p {
+  margin: 0 0 var(--rpl-space-3);
+  color: var(--rpl-text-dim);
+  line-height: 1.65;
+}
+
+.recap strong {
+  color: var(--rpl-text);
+  font-weight: 600;
+}
+
+.recap em {
+  color: var(--rpl-text-faint);
+}
+
+.recap a {
+  color: var(--rpl-gold);
+}
+
+.recap a:hover {
+  color: var(--rpl-gold-bright);
+}
+
+.recap hr {
+  margin: var(--rpl-space-6) 0;
+  border: none;
+  border-top: 1px solid var(--rpl-border);
+}
+
+.recap table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 var(--rpl-space-4);
+  font-variant-numeric: tabular-nums;
+  font-size: 14px;
+}
+
+.recap th {
+  text-align: left;
+  padding: var(--rpl-space-2) var(--rpl-space-3);
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-text-faint);
+  border-bottom: 1px solid var(--rpl-border);
+  white-space: nowrap;
+}
+
+.recap td {
+  padding: var(--rpl-space-2) var(--rpl-space-3);
+  border-bottom: 1px solid rgba(61, 51, 32, 0.5);
+  color: var(--rpl-text-dim);
+  white-space: nowrap;
+}
+
+/* ---- front page hero blocks ------------------------------------------------ */
+
+.hero-blocks {
+  display: grid;
+  gap: var(--rpl-space-4);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  margin-top: var(--rpl-space-5);
+}
+
+.hero-block {
+  background: var(--rpl-panel-gradient);
+  border: 1px solid var(--rpl-border);
+  border-radius: var(--rpl-radius-lg);
+  padding: var(--rpl-space-4) var(--rpl-space-5);
+  box-shadow: var(--rpl-shadow-bar);
+  display: flex;
+  flex-direction: column;
+  gap: var(--rpl-space-2);
+}
+
+.hero-block__headline {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: var(--rpl-text);
+}
+
+.hero-block__meta {
+  margin: 0;
+  color: var(--rpl-text-faint);
+  font-size: 13px;
+}
+
+.hero-block__series {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--rpl-space-2);
+}
+
+.hero-block__series li {
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hero-block__vs {
+  color: var(--rpl-text-faint);
+  padding: 0 var(--rpl-space-2);
 }
 
 .profile__section code {

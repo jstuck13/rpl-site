@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "data": "node scripts/parse-tracker.mjs",
-    "profiles": "node scripts/build-profiles.mjs"
+    "profiles": "node scripts/build-profiles.mjs",
+    "recaps": "node scripts/build-recaps.mjs"
   },
   "dependencies": {
     "marked": "^18.0.11",
