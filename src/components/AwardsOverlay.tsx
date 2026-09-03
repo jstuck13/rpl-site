@@ -109,6 +109,7 @@ export function AwardsOverlay({ awards }: { awards: Award[] }) {
           primary={award.value}
           secondary={secondary}
           side={settings.position.endsWith("right") ? "right" : "left"}
+          accent="var(--rpl-gold)"
         />
       </div>
     </div>

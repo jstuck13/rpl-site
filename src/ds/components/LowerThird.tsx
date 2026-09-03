@@ -9,7 +9,7 @@ export interface LowerThirdProps {
   kicker?: string;
   /** Accent bar edge. Default `"left"`. */
   side?: "left" | "right";
-  /** Accent color for the bar and kicker. Default RPL gold. */
+  /** Accent color for the bar and kicker. Defaults to the neutral accent. */
   accent?: string;
   className?: string;
 }

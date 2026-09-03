@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { TeamChip } from "@/ds/components/TeamChip";
 import { formatMoney, type Player } from "@/lib/data";
-import { teamName } from "@/lib/teams";
+import { teamAccent, teamName } from "@/lib/teams";
 
 /** One row of the Player Value leaderboard. */
 export function PlayerRow({ player, rank }: { player: Player; rank: number }) {
@@ -20,7 +20,7 @@ export function PlayerRow({ player, rank }: { player: Player; rank: number }) {
         </div>
       </td>
       <td>
-        <TeamChip team={teamName(player.team)} size="sm" />
+        <TeamChip team={teamName(player.team)} accent={teamAccent(player.team)} size="sm" />
       </td>
       <td>{player.rank ?? "—"}</td>
       <td className="num">{player.totals.games ?? "—"}</td>

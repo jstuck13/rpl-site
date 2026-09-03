@@ -84,12 +84,6 @@ export default function TeamsPage() {
             </article>
           ))}
         </div>
-        <p className="note" style={{ marginTop: "16px" }}>
-          <strong>No team colors yet.</strong> Every club currently uses brand
-          gold. The design system marks its orange and blue as in-game side
-          colors, not brand colors, so team accents are waiting on a real
-          palette.
-        </p>
       </section>
     </div>
   );

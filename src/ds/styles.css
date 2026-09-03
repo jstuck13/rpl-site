@@ -51,13 +51,26 @@
   --rpl-text-dim: #a89a7d;
   --rpl-text-faint: #6b6047;
 
-  /* gold */
+  /* gold — reserved for medals and award/trophy contexts (RankBadge 1st,
+     StatTile/NotePanel --gold variant, awards ticker). Not the brand color. */
   --rpl-gold: #d9b25c;
   --rpl-gold-bright: #f2dc9b;
   --rpl-gold-deep: #8a6d2f;
   --rpl-gold-glow: rgba(217, 178, 92, 0.35);
   --rpl-gold-gradient: linear-gradient(135deg, #f2dc9b, #d9b25c);
   --rpl-on-gold: #241c0c;
+
+  /* accent — the neutral default for site/graphic chrome (frame eyebrows,
+     matchup labels, lower-third bars, card borders, VS nodes). Deliberately
+     desaturated so it never competes with a team's own accent color, which
+     always wins via the --rpl-*-accent override vars below each component
+     that supports one. */
+  --rpl-accent: #b9b0a0;
+  --rpl-accent-bright: #e6ddc9;
+  --rpl-accent-deep: #6b6252;
+  --rpl-accent-glow: rgba(185, 176, 160, 0.28);
+  --rpl-accent-gradient: linear-gradient(135deg, #e6ddc9, #b9b0a0);
+  --rpl-on-accent: #1c1810;
 
   /* status */
   --rpl-good: #2fd699;
@@ -161,7 +174,7 @@
   font-size: 15px;
   letter-spacing: var(--rpl-tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 .rpl-frame__title {
   font-family: var(--rpl-font-display);
@@ -253,6 +266,14 @@
 }
 .rpl-teamchip--sm { padding: 3px 9px; font-size: 11px; }
 .rpl-teamchip--lg { padding: 8px 16px; font-size: 15px; }
+.rpl-teamchip__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 6px;
+  flex: none;
+  background: var(--rpl-chip-accent, var(--rpl-accent));
+}
 
 /* ============================================================================
    StandingsRow — one ranked player line
@@ -271,7 +292,7 @@
   align-self: stretch;
   min-height: 34px;
   border-radius: 2px;
-  background: var(--rpl-gold-deep);
+  background: var(--rpl-row-accent, var(--rpl-accent-deep));
   flex: none;
 }
 .rpl-standings-row__names { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 2px; }
@@ -318,7 +339,7 @@
   font-weight: 700;
   letter-spacing: var(--rpl-tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 .rpl-heading__title {
   font-family: var(--rpl-font-display);
@@ -410,7 +431,7 @@
   position: relative;
   aspect-ratio: 4 / 3;
   background:
-    radial-gradient(120% 80% at 50% 0%, rgba(217, 178, 92, 0.18), transparent 60%),
+    radial-gradient(120% 80% at 50% 0%, var(--rpl-accent-glow), transparent 60%),
     var(--rpl-panel-raised);
   display: flex;
   align-items: center;
@@ -422,7 +443,7 @@
   font-family: var(--rpl-font-display);
   font-weight: 700;
   font-size: 64px;
-  color: var(--rpl-gold);
+  color: var(--rpl-card-accent, var(--rpl-accent));
   letter-spacing: 0.04em;
 }
 .rpl-playercard__rank {
@@ -435,7 +456,7 @@
   flex-direction: column;
   gap: var(--rpl-space-3);
   padding: var(--rpl-space-5);
-  border-top: 3px solid var(--rpl-gold);
+  border-top: 3px solid var(--rpl-card-accent, var(--rpl-accent));
 }
 .rpl-playercard__name {
   font-family: var(--rpl-font-display);
@@ -450,7 +471,7 @@
   font-weight: 700;
   font-size: 22px;
   font-variant-numeric: tabular-nums;
-  color: var(--rpl-gold-bright);
+  color: var(--rpl-text);
   margin-left: auto;
 }
 .rpl-playercard__valuelabel {
@@ -566,14 +587,14 @@
   inset: 0;
   transform: rotate(45deg);
   border-radius: 9px;
-  background: var(--rpl-gold-gradient);
+  background: var(--rpl-accent-gradient);
   box-shadow: 0 7px 16px -4px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(0, 0, 0, 0.4);
 }
 .rpl-scorebug__node-label {
   position: relative;
   font-family: var(--rpl-font-display);
   font-weight: 700;
-  color: var(--rpl-on-gold);
+  color: var(--rpl-on-accent);
   font-size: calc(15px * var(--rpl-sb-scale));
   letter-spacing: 0.02em;
 }
@@ -604,7 +625,7 @@
   font-size: 14px;
   letter-spacing: var(--rpl-tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 .rpl-matchup__grid {
   display: grid;
@@ -626,7 +647,13 @@
   text-transform: uppercase;
   overflow-wrap: break-word;
   padding-bottom: var(--rpl-space-2);
-  border-bottom: 3px solid var(--rpl-gold);
+  border-bottom: 3px solid var(--rpl-accent);
+}
+.rpl-matchup__side--home .rpl-matchup__team {
+  border-bottom-color: var(--rpl-matchup-home-accent, var(--rpl-accent));
+}
+.rpl-matchup__side--away .rpl-matchup__team {
+  border-bottom-color: var(--rpl-matchup-away-accent, var(--rpl-accent));
 }
 .rpl-matchup--sm { --rpl-matchup-team-size: 30px; }
 .rpl-matchup--md { --rpl-matchup-team-size: 40px; }
@@ -647,8 +674,8 @@
   font-family: var(--rpl-font-display);
   font-weight: 700;
   font-size: 22px;
-  color: var(--rpl-on-gold);
-  background: var(--rpl-gold-gradient);
+  color: var(--rpl-on-accent);
+  background: var(--rpl-accent-gradient);
   transform: rotate(45deg);
   border-radius: 12px;
 }
@@ -679,7 +706,7 @@
 .rpl-lowerthird__accent {
   width: 8px;
   flex: none;
-  background: var(--rpl-lt-accent, var(--rpl-gold));
+  background: var(--rpl-lt-accent, var(--rpl-accent));
 }
 .rpl-lowerthird__body {
   display: flex;
@@ -692,7 +719,7 @@
   font-size: 12px;
   letter-spacing: var(--rpl-tracking-eyebrow);
   text-transform: uppercase;
-  color: var(--rpl-lt-accent, var(--rpl-gold));
+  color: var(--rpl-lt-accent, var(--rpl-accent));
 }
 .rpl-lowerthird__primary {
   font-family: var(--rpl-font-display);

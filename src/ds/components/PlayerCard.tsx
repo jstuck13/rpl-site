@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import { RankBadge } from "./RankBadge";
 import { TeamChip } from "./TeamChip";
 
@@ -11,6 +12,9 @@ export interface PlayerCardProps {
   player: string;
   /** Team name or abbreviation. */
   team: string;
+  /** Team accent color (hex) for the card border, initials, and team chip dot.
+   * Defaults to the neutral accent. */
+  accent?: string;
   /** Headline figure (Player Value, MVP score…). */
   value?: string | number;
   /** Small uppercase caption above the value. Default `"Player Value"`. */
@@ -37,6 +41,7 @@ function initialsOf(name: string): string {
 export function PlayerCard({
   player,
   team,
+  accent,
   value,
   valueLabel = "Player Value",
   rank,
@@ -47,9 +52,10 @@ export function PlayerCard({
   const classes = ["rpl-playercard", className].filter(Boolean).join(" ");
   const displayValue =
     typeof value === "number" ? value.toLocaleString("en-US") : value;
+  const style = accent ? ({ "--rpl-card-accent": accent } as CSSProperties) : undefined;
 
   return (
-    <div className={classes}>
+    <div className={classes} style={style}>
       <div className="rpl-playercard__media">
         {imageUrl ? (
           <img className="rpl-playercard__photo" src={imageUrl} alt={player} />
@@ -65,7 +71,7 @@ export function PlayerCard({
       <div className="rpl-playercard__body">
         <div className="rpl-playercard__name">{player}</div>
         <div className="rpl-playercard__meta">
-          <TeamChip team={team} size="sm" />
+          <TeamChip team={team} size="sm" accent={accent} />
           {value != null && (
             <div className="rpl-playercard__value">
               <div className="rpl-playercard__valuelabel">{valueLabel}</div>

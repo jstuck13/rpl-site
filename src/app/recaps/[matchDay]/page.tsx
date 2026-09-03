@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { TeamChip } from "@/ds/components/TeamChip";
 import { RECAPS, formatDate, recapByMatchDay } from "@/lib/recaps";
-import { teamName, teamSlug } from "@/lib/teams";
+import { teamAccent, teamName, teamSlug } from "@/lib/teams";
 
 type Params = { matchDay: string };
 
@@ -50,7 +50,7 @@ export default async function RecapPage({
         <div className="recap-card__clubs">
           {recap.teamsPlayed.map((code) => (
             <Link key={code} href={`/teams/${teamSlug(code) ?? ""}`}>
-              <TeamChip team={teamName(code)} size="sm" />
+              <TeamChip team={teamName(code)} accent={teamAccent(code)} size="sm" />
             </Link>
           ))}
           {recap.teamsOnBye.length > 0 && (

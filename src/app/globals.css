@@ -78,7 +78,7 @@ a {
   font-size: 20px;
   letter-spacing: var(--rpl-tracking-label);
   text-transform: uppercase;
-  background: var(--rpl-gold-gradient);
+  background: var(--rpl-accent-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -105,34 +105,34 @@ a {
 
 .site-nav a:hover {
   color: var(--rpl-text);
-  border-bottom-color: var(--rpl-gold-deep);
+  border-bottom-color: var(--rpl-accent-deep);
 }
 
-/* The one persistent recruiting CTA. Gold so it reads as an action rather than
-   another section of the site, quiet enough not to shout over the nav. */
+/* The one persistent recruiting CTA. Brighter than the nav so it still reads
+   as an action, without reaching for a dedicated brand hue. */
 .site-nav__cta {
   font-family: var(--rpl-font-display);
   font-weight: 600;
   font-size: 14px;
   letter-spacing: var(--rpl-tracking-label);
   text-transform: uppercase;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent-bright);
   padding: var(--rpl-space-2) 0;
   border-bottom: 2px solid transparent;
   transition: color 120ms ease, border-color 120ms ease;
 }
 
 .site-nav__cta:hover {
-  color: var(--rpl-gold-bright);
-  border-bottom-color: var(--rpl-gold-deep);
+  color: var(--rpl-text);
+  border-bottom-color: var(--rpl-accent-deep);
 }
 
 .site-footer__link {
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 
 .site-footer__link:hover {
-  color: var(--rpl-gold-bright);
+  color: var(--rpl-accent-bright);
 }
 
 .join-cta {
@@ -153,13 +153,13 @@ a {
   text-transform: uppercase;
   padding: var(--rpl-space-3) var(--rpl-space-5);
   border-radius: var(--rpl-radius-pill);
-  border: 1px solid var(--rpl-gold-deep);
-  background: var(--rpl-gold-gradient);
+  border: 1px solid var(--rpl-accent-deep);
+  background: var(--rpl-accent-gradient);
   color: var(--rpl-bg);
 }
 
 .join-cta__button:hover {
-  border-color: var(--rpl-gold-bright);
+  border-color: var(--rpl-accent-bright);
 }
 
 .site-footer {
@@ -195,11 +195,11 @@ a {
   font-size: 13px;
   letter-spacing: var(--rpl-tracking-label);
   text-transform: uppercase;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 
 .section__link:hover {
-  color: var(--rpl-gold-bright);
+  color: var(--rpl-accent-bright);
 }
 
 .eyebrow {
@@ -231,7 +231,7 @@ a {
 
 .hero__title em {
   font-style: normal;
-  background: var(--rpl-gold-gradient);
+  background: var(--rpl-accent-gradient);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -275,8 +275,8 @@ a {
 }
 
 .tabs__tab--active {
-  color: var(--rpl-gold);
-  border-bottom-color: var(--rpl-gold-deep);
+  color: var(--rpl-accent-bright);
+  border-bottom-color: var(--rpl-accent-deep);
 }
 
 /* ---- panels & tables ------------------------------------------------------ */
@@ -324,7 +324,7 @@ a {
 }
 
 .table tbody tr:hover {
-  background: rgba(217, 178, 92, 0.05);
+  background: rgba(185, 176, 160, 0.06);
 }
 
 .table .num {
@@ -336,7 +336,7 @@ a {
   font-family: var(--rpl-font-display);
   font-weight: 700;
   font-size: 17px;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent-bright);
 }
 
 .table .rank-col {
@@ -358,7 +358,7 @@ a {
 }
 
 .player-cell a.player-cell__name:hover {
-  color: var(--rpl-gold-bright);
+  color: var(--rpl-accent-bright);
 }
 
 /* ---- badges --------------------------------------------------------------- */
@@ -378,8 +378,8 @@ a {
 }
 
 .tag--manager {
-  border-color: var(--rpl-gold-deep);
-  color: var(--rpl-gold);
+  border-color: var(--rpl-accent-deep);
+  color: var(--rpl-accent);
 }
 
 .tag--exempt {
@@ -410,7 +410,7 @@ a {
 .team-card {
   background: var(--rpl-panel-gradient);
   border: 1px solid var(--rpl-border);
-  border-top: 3px solid var(--team-accent, var(--rpl-gold));
+  border-top: 3px solid var(--team-accent, var(--rpl-accent));
   border-radius: var(--rpl-radius-lg);
   padding: var(--rpl-space-4);
   box-shadow: var(--rpl-shadow-bar);
@@ -449,7 +449,7 @@ a {
 }
 
 .team-card__row span:last-child {
-  color: var(--rpl-gold);
+  color: var(--team-accent, var(--rpl-accent));
   font-family: var(--rpl-font-display);
   font-weight: 600;
 }
@@ -483,14 +483,14 @@ a {
 }
 
 .stat__value--gold {
-  color: var(--rpl-gold);
+  color: var(--rpl-accent-bright);
 }
 
 /* ---- notes ---------------------------------------------------------------- */
 
 .note {
-  border-left: 3px solid var(--rpl-gold-deep);
-  background: rgba(217, 178, 92, 0.06);
+  border-left: 3px solid var(--rpl-accent-deep);
+  background: rgba(185, 176, 160, 0.06);
   border-radius: 0 var(--rpl-radius-md) var(--rpl-radius-md) 0;
   padding: var(--rpl-space-3) var(--rpl-space-4);
   color: var(--rpl-text-dim);
@@ -549,7 +549,7 @@ a {
 }
 
 .back-link:hover {
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 
 @media (max-width: 640px) {
@@ -580,7 +580,7 @@ a {
   font-size: 18px;
   letter-spacing: var(--rpl-tracking-label);
   text-transform: uppercase;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 
 .day-head__meta {
@@ -629,7 +629,7 @@ a {
   font-family: var(--rpl-font-display);
   font-weight: 700;
   font-size: 24px;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent-bright);
   font-variant-numeric: tabular-nums;
   padding: 0 var(--rpl-space-2);
 }
@@ -702,7 +702,7 @@ a {
   font-size: 20px;
   letter-spacing: var(--rpl-tracking-label);
   text-transform: uppercase;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 
 .profile__section {
@@ -760,7 +760,7 @@ a {
 }
 
 .recap-card__title a:hover {
-  color: var(--rpl-gold-bright);
+  color: var(--rpl-accent-bright);
 }
 
 .recap-card__subtitle {
@@ -801,7 +801,7 @@ a {
   font-size: 22px;
   letter-spacing: var(--rpl-tracking-label);
   text-transform: uppercase;
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 
 .recap h3 {
@@ -830,11 +830,11 @@ a {
 }
 
 .recap a {
-  color: var(--rpl-gold);
+  color: var(--rpl-accent);
 }
 
 .recap a:hover {
-  color: var(--rpl-gold-bright);
+  color: var(--rpl-accent-bright);
 }
 
 .recap hr {
@@ -1097,8 +1097,8 @@ a {
 .profile__section code {
   font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
   font-size: 0.9em;
-  color: var(--rpl-gold);
-  background: rgba(217, 178, 92, 0.08);
+  color: var(--rpl-accent);
+  background: rgba(185, 176, 160, 0.08);
   padding: 1px 5px;
   border-radius: var(--rpl-radius-sm);
 }

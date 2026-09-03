@@ -12,7 +12,7 @@ import {
   profileBySlug,
   type Player,
 } from "@/lib/data";
-import { teamName } from "@/lib/teams";
+import { teamAccent, teamName } from "@/lib/teams";
 
 type Params = { slug: string };
 
@@ -203,7 +203,9 @@ export default async function PlayerPage({
         <div>
           <h1 className="player-head__name">{latest.name}</h1>
           <div className="player-head__meta">
-            {latest.team && <TeamChip team={teamName(latest.team)} size="sm" />}
+            {latest.team && (
+              <TeamChip team={teamName(latest.team)} accent={teamAccent(latest.team)} size="sm" />
+            )}
             {latest.rank && <span className="tag">{latest.rank}</span>}
             {latest.isManager && (
               <span className="tag tag--manager">Manager</span>
