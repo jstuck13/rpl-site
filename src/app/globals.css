@@ -873,6 +873,121 @@ a {
   white-space: nowrap;
 }
 
+/* ---- awards bug ------------------------------------------------------------ */
+
+/* A broadcast-style ticker: one race on screen at a time, gold rule down the
+   left the way the lower thirds carry it. */
+.awards-bug {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--rpl-space-4);
+  flex-wrap: wrap;
+  background: var(--rpl-panel-gradient);
+  border: 1px solid var(--rpl-border);
+  border-radius: var(--rpl-radius-lg);
+  box-shadow: var(--rpl-shadow-bar);
+  padding: var(--rpl-space-4) var(--rpl-space-5);
+}
+
+.awards-bug__rail {
+  border-left: 3px solid var(--rpl-gold-deep);
+  padding-left: var(--rpl-space-4);
+  min-width: 0;
+}
+
+.awards-bug__eyebrow {
+  margin: 0 0 var(--rpl-space-1);
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: var(--rpl-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--rpl-gold);
+}
+
+.awards-bug__basis {
+  color: var(--rpl-text-faint);
+  font-weight: 600;
+}
+
+.awards-bug__body {
+  animation: awards-bug-in 320ms ease both;
+}
+
+@keyframes awards-bug-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.awards-bug__value {
+  margin: 0;
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+.awards-bug__holders {
+  margin: var(--rpl-space-1) 0 0;
+  color: var(--rpl-text-dim);
+  font-size: 14px;
+}
+
+.awards-bug__holders a:hover {
+  color: var(--rpl-gold-bright);
+}
+
+.awards-bug__tie,
+.awards-bug__sep {
+  color: var(--rpl-text-faint);
+}
+
+.awards-bug__through {
+  margin: var(--rpl-space-2) 0 0;
+  color: var(--rpl-text-faint);
+  font-size: 12px;
+}
+
+.awards-bug__dots {
+  display: flex;
+  gap: var(--rpl-space-2);
+}
+
+.awards-bug__dot {
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: var(--rpl-radius-pill);
+  border: 1px solid var(--rpl-border-strong);
+  background: transparent;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.awards-bug__dot:hover {
+  border-color: var(--rpl-gold-deep);
+}
+
+.awards-bug__dot--on {
+  background: var(--rpl-gold);
+  border-color: var(--rpl-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .awards-bug__body {
+    animation: none;
+  }
+}
+
 /* ---- front page hero blocks ------------------------------------------------ */
 
 .hero-blocks {

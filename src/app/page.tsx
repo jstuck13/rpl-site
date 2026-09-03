@@ -8,12 +8,15 @@ import {
 import { DAYS_PLAYED, DAYS_TOTAL, goalDiff, standings } from "@/lib/season";
 import { formatDate, latestRecap } from "@/lib/recaps";
 import { formatTime, nextUp } from "@/lib/next-up";
+import { awards } from "@/lib/awards";
 import { teamName } from "@/lib/teams";
 import { PlayerTable } from "@/components/PlayerRow";
+import { AwardsBug } from "@/components/AwardsBug";
 
 export default function HomePage() {
   const recap = latestRecap();
   const next = nextUp();
+  const races = awards();
   const board = leaderboard();
   const top = board.slice(0, 8);
   const squads = rosters();
@@ -92,6 +95,11 @@ export default function HomePage() {
           </div>
         )}
       </section>
+
+      <AwardsBug
+        awards={races}
+        through={`Season ${CURRENT_SEASON} · through Match Day ${DAYS_PLAYED}`}
+      />
 
       <section>
         <div className="grid grid--stats">

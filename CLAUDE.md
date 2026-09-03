@@ -97,6 +97,28 @@ next match day.
   a bare "Day 3" or "lineup 3" in recap copy, so a draft can't reintroduce it —
   "Match Day 3" is fine, since that's the order nights were actually played.
 
+## The four awards
+
+Computed live in `src/lib/awards.ts` from logged games, never stored, and shown
+as a cycling news bug on the home page. The definitions are RPL's own, read off
+how Season 1 was actually awarded — and they are **deliberately not on a common
+basis**, so don't normalize them:
+
+| Award | Measured on | Season 1 |
+|---|---|---|
+| Golden Boot | Most goals, season total | Astro, 31 |
+| Golden Laces | Most assists, season total | TLBoryczka, 25 |
+| Golden Gloves | Most saves **per game** | NO LIGHT, 2.05 |
+| Season MVP | Most points **per game** | zPylo, 439.05 |
+
+Early in a season these are mostly ties — after Match Day 1 the Boot was a
+five-way tie on 4 goals. The bug lists every co-leader alphabetically rather
+than picking one, which is the honest render and needs no tiebreaker RPL hasn't
+agreed on. Season 1 also shows there's an eligibility question the code does not
+model: Spam God6450 posted the highest avg points in the dataset but wasn't
+MVP-eligible, because TTT's season was voided and the sample was 7 games. If
+that ever recurs, eligibility belongs in `awards.ts`, not in the UI.
+
 ## Design system
 
 `src/ds/` is a **vendored copy** of `@rpl/graphics`, whose source of truth is
