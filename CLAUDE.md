@@ -119,6 +119,29 @@ model: Spam God6450 posted the highest avg points in the dataset but wasn't
 MVP-eligible, because TTT's season was voided and the sample was 7 games. If
 that ever recurs, eligibility belongs in `awards.ts`, not in the UI.
 
+### The OBS overlay
+
+`/overlay/awards` is the same four races as broadcast furniture — a `LowerThird`
+that cycles on a transparent page, meant to be an OBS **Browser Source** over
+gameplay at 1920×1080. This is the one place the design system's 1080px
+broadcast components are the right call rather than the wrong one.
+
+Query string, so it can be re-aimed from OBS without a redeploy:
+`?position=bottom-left|bottom-right|top-left|top-right`, `&interval=<seconds>`
+(2–120), `&scale=<factor>` (0.5–3). Anything unreadable falls back to the
+default instead of breaking the graphic on air.
+
+Two things make transparency work, and both are load-bearing: the page strips
+`body`'s background (OBS's own transparent `background-color` doesn't override a
+`background-image`), and it hides the site chrome, because the App Router's root
+layout applies to every route and can't be opted out of. The overlay renders
+client-side inside a Suspense boundary — that's what reading the query string
+costs — so the prerendered HTML is deliberately empty.
+
+The graphic only changes when the site is rebuilt, which is also the only time
+the underlying numbers change. After a deploy, OBS needs its cache refreshed
+(right-click the source → Refresh) or it will keep showing the old figures.
+
 ## Design system
 
 `src/ds/` is a **vendored copy** of `@rpl/graphics`, whose source of truth is

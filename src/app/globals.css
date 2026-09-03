@@ -988,6 +988,57 @@ a {
   }
 }
 
+/* ---- OBS overlay ----------------------------------------------------------- */
+
+/* Broadcast furniture, not page layout: a fixed 1080p-ish plate anchored to a
+   corner of a transparent page, for OBS to composite over gameplay. Sizes are
+   the design system's own — the scale factor is the only knob, so the plate
+   still matches the Discord graphics at 1x. */
+.overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  display: flex;
+  padding: 48px;
+}
+
+.overlay--bottom-left {
+  align-items: flex-end;
+  justify-content: flex-start;
+}
+
+.overlay--bottom-right {
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.overlay--top-left {
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.overlay--top-right {
+  align-items: flex-start;
+  justify-content: flex-end;
+}
+
+.overlay__item {
+  transform: scale(var(--overlay-scale, 1)) translateY(12px);
+  transform-origin: bottom left;
+  opacity: 0;
+  transition: opacity 500ms ease, transform 500ms ease;
+}
+
+.overlay--bottom-right .overlay__item,
+.overlay--top-right .overlay__item {
+  transform-origin: bottom right;
+}
+
+.overlay__item--in {
+  transform: scale(var(--overlay-scale, 1)) translateY(0);
+  opacity: 1;
+}
+
 /* ---- front page hero blocks ------------------------------------------------ */
 
 .hero-blocks {
