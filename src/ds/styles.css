@@ -61,16 +61,21 @@
   --rpl-on-gold: #241c0c;
 
   /* accent — the neutral default for site/graphic chrome (frame eyebrows,
-     matchup labels, lower-third bars, card borders, VS nodes). Deliberately
-     desaturated so it never competes with a team's own accent color, which
-     always wins via the --rpl-*-accent override vars below each component
-     that supports one. */
-  --rpl-accent: #b9b0a0;
-  --rpl-accent-bright: #e6ddc9;
-  --rpl-accent-deep: #6b6252;
-  --rpl-accent-glow: rgba(185, 176, 160, 0.28);
-  --rpl-accent-gradient: linear-gradient(135deg, #e6ddc9, #b9b0a0);
-  --rpl-on-accent: #1c1810;
+     matchup labels, lower-third bars, card borders, VS nodes). Kept well
+     below gold's and every team color's saturation so it never competes with
+     a team's own accent, which always wins via the --rpl-*-accent override
+     vars below each component that supports one. Richer than the original
+     2026-09-03 pass (S16%→S30%, wider light/dark range) — that first version
+     read as flat/grey on any page without a specific team or player
+     attached; this stays in the same warm hue family as gold (~34° vs
+     gold's ~41°) but at roughly half its saturation, so it's still clearly
+     "neutral" next to gold or team 999's amber, just no longer lifeless. */
+  --rpl-accent: #b89d7a;
+  --rpl-accent-bright: #e0cfb8;
+  --rpl-accent-deep: #6c5337;
+  --rpl-accent-glow: rgba(184, 157, 122, 0.32);
+  --rpl-accent-gradient: linear-gradient(135deg, #e0cfb8, #b89d7a);
+  --rpl-on-accent: #1c150c;
 
   /* status */
   --rpl-good: #2fd699;

@@ -8,6 +8,7 @@ import {
   standings,
   winPct,
 } from "@/lib/season";
+import { teamAccent } from "@/lib/teams";
 
 export const metadata: Metadata = { title: "Standings" };
 
@@ -50,7 +51,13 @@ export default function StandingsPage() {
                 return (
                   <tr key={row.code}>
                     <td className="rank-col">{row.played ? i + 1 : "—"}</td>
-                    <td className="player-cell__name">{row.name}</td>
+                    <td className="player-cell__name">
+                      <span
+                        className="team-dot"
+                        style={{ background: teamAccent(row.code) }}
+                      />
+                      {row.name}
+                    </td>
                     <td className="num">{row.played ? row.wins : "—"}</td>
                     <td className="num">{row.played ? row.losses : "—"}</td>
                     <td className="num">

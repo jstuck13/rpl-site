@@ -81,8 +81,17 @@ export function goalDiff(s: Standing): number {
  * top on a vacuous 0-0. The tiebreaker below win percentage is goal difference;
  * RPL has deliberately not settled a formal tiebreaker, so this is a display
  * order, not a ruling.
+ *
+ * `throughMatchDay`, when given, recomputes the table using only match days
+ * up to and including that number — e.g. `standings(2, 3)` is what the table
+ * looked like right after Match Day 3. Used by `/currently` to diff "now"
+ * against "before the last match day" for standings-movement. Omit it (the
+ * default) for the current, full table.
  */
-export function standings(season: number = 2): Standing[] {
+export function standings(
+  season: number = 2,
+  throughMatchDay?: number
+): Standing[] {
   const table = new Map<string, Standing>();
   for (const team of teamsForSeason(season)) {
     table.set(team.code, {
@@ -98,7 +107,12 @@ export function standings(season: number = 2): Standing[] {
     });
   }
 
-  for (const day of MATCH_DAYS) {
+  const days =
+    throughMatchDay === undefined
+      ? MATCH_DAYS
+      : MATCH_DAYS.filter((d) => d.matchDay <= throughMatchDay);
+
+  for (const day of days) {
     for (const series of day.series) {
       const home = table.get(series.home);
       const away = table.get(series.away);

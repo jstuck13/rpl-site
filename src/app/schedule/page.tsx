@@ -9,7 +9,7 @@ import {
   seriesScore,
   type SeriesResult,
 } from "@/lib/season";
-import { teamName } from "@/lib/teams";
+import { teamAccent, teamName } from "@/lib/teams";
 
 export const metadata: Metadata = { title: "Schedule & results" };
 
@@ -21,6 +21,10 @@ function SeriesCard({ series }: { series: SeriesResult }) {
         <span
           className={`series__team${winnerIsHome ? " series__team--won" : ""}`}
         >
+          <span
+            className="team-dot"
+            style={{ background: teamAccent(series.home) }}
+          />
           {teamName(series.home)}
         </span>
         <span className="series__score">{seriesScore(series)}</span>
@@ -28,6 +32,14 @@ function SeriesCard({ series }: { series: SeriesResult }) {
           className={`series__team${!winnerIsHome ? " series__team--won" : ""}`}
         >
           {teamName(series.away)}
+          <span
+            className="team-dot"
+            style={{
+              background: teamAccent(series.away),
+              marginRight: 0,
+              marginLeft: 8,
+            }}
+          />
         </span>
       </div>
       <ol className="series__games">

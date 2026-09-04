@@ -87,6 +87,7 @@ a {
 
 .site-nav {
   display: flex;
+  align-items: center;
   gap: var(--rpl-space-4);
   flex-wrap: wrap;
 }
@@ -127,6 +128,104 @@ a {
   border-bottom-color: var(--rpl-accent-deep);
 }
 
+/* ---- season dropdown -------------------------------------------------- */
+
+.site-nav__dropdown {
+  position: relative;
+}
+
+.site-nav__dropdown-trigger {
+  appearance: none;
+  background: none;
+  border: none;
+  margin: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: inherit;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-text-dim);
+  padding: var(--rpl-space-2) 0;
+  border-bottom: 2px solid transparent;
+  transition: color 120ms ease, border-color 120ms ease;
+}
+
+.site-nav__dropdown:hover .site-nav__dropdown-trigger,
+.site-nav__dropdown:focus-within .site-nav__dropdown-trigger {
+  color: var(--rpl-text);
+  border-bottom-color: var(--rpl-accent-deep);
+}
+
+.site-nav__caret {
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 120ms ease;
+}
+
+.site-nav__dropdown:hover .site-nav__caret,
+.site-nav__dropdown:focus-within .site-nav__caret {
+  transform: rotate(225deg) translateY(1px);
+}
+
+/* visibility (not display) so tabbing from the trigger keeps moving into
+   the links — display:none would pull them out of tab order entirely and
+   the menu would close the instant it opened. */
+.site-nav__dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: var(--rpl-space-2);
+  min-width: 180px;
+  padding: var(--rpl-space-2);
+  background: var(--rpl-panel-gradient);
+  border: 1px solid var(--rpl-border);
+  border-radius: var(--rpl-radius-md);
+  box-shadow: var(--rpl-shadow-panel);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-4px);
+  transition: opacity 120ms ease, transform 120ms ease, visibility 120ms;
+  z-index: 20;
+}
+
+.site-nav__dropdown:hover .site-nav__dropdown-menu,
+.site-nav__dropdown:focus-within .site-nav__dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.site-nav .site-nav__dropdown-link {
+  display: block;
+  padding: var(--rpl-space-2) var(--rpl-space-3);
+  border-radius: var(--rpl-radius-sm);
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-text-dim);
+  border-bottom: none;
+  transition: color 120ms ease, background 120ms ease;
+}
+
+.site-nav .site-nav__dropdown-link:hover {
+  color: var(--rpl-text);
+  background: rgba(184, 157, 122, 0.1);
+}
+
 .site-footer__link {
   color: var(--rpl-accent);
 }
@@ -143,6 +242,8 @@ a {
   margin-top: var(--rpl-space-5);
 }
 
+/* The one button on the site meant to look like an event, not chrome — gold
+   on purpose, same reasoning as the medal badge and the top-value stat. */
 .join-cta__button {
   display: inline-flex;
   align-items: center;
@@ -153,13 +254,14 @@ a {
   text-transform: uppercase;
   padding: var(--rpl-space-3) var(--rpl-space-5);
   border-radius: var(--rpl-radius-pill);
-  border: 1px solid var(--rpl-accent-deep);
-  background: var(--rpl-accent-gradient);
-  color: var(--rpl-bg);
+  border: 1px solid var(--rpl-gold-deep);
+  background: var(--rpl-gold-gradient);
+  color: var(--rpl-on-gold);
+  box-shadow: var(--rpl-shadow-gold);
 }
 
 .join-cta__button:hover {
-  border-color: var(--rpl-accent-bright);
+  border-color: var(--rpl-gold-bright);
 }
 
 .site-footer {
@@ -215,8 +317,25 @@ a {
 /* ---- hero ----------------------------------------------------------------- */
 
 .hero {
+  position: relative;
   padding: var(--rpl-space-7) 0 var(--rpl-space-5);
   border-bottom: 1px solid var(--rpl-border);
+}
+
+/* A soft glow tucked behind the title — decorative, sits below the in-flow
+   text (z-index:-1 inside .hero's own stacking context), so it adds depth
+   without ever competing with the copy for legibility. */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -60px;
+  right: -80px;
+  width: 460px;
+  height: 460px;
+  max-width: 60%;
+  background: radial-gradient(circle, var(--rpl-accent-glow), transparent 70%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .hero__title {
@@ -241,6 +360,17 @@ a {
   margin: 0;
   max-width: 58ch;
   color: var(--rpl-text-dim);
+}
+
+/* The season-status row under the lede: a small "you are here" badge plus
+   the two pointers out (About = context, Join = the pitch), kept visually
+   lighter than the hero copy so it reads as current status, not identity. */
+.hero-links {
+  display: flex;
+  align-items: center;
+  gap: var(--rpl-space-4);
+  flex-wrap: wrap;
+  margin-top: var(--rpl-space-4);
 }
 
 /* ---- tabs ----------------------------------------------------------------- */
@@ -357,6 +487,18 @@ a {
   font-weight: 600;
 }
 
+/* A small team-color swatch for plain-text club names in tables/cards that
+   don't render a full TeamChip — standings rows, series matchups. */
+.team-dot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+  vertical-align: middle;
+  flex: none;
+}
+
 .player-cell a.player-cell__name:hover {
   color: var(--rpl-accent-bright);
 }
@@ -405,6 +547,10 @@ a {
 
 .grid--stats {
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+}
+
+.grid--races {
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 .team-card {
@@ -483,7 +629,15 @@ a {
 }
 
 .stat__value--gold {
-  color: var(--rpl-accent-bright);
+  color: var(--rpl-gold-bright);
+}
+
+/* A second, smaller line under a stat value — e.g. naming whose number it
+   is, for a tile whose value alone doesn't say who it belongs to. */
+.stat__sub {
+  margin: 2px 0 0;
+  color: var(--rpl-text-faint);
+  font-size: 12px;
 }
 
 /* ---- notes ---------------------------------------------------------------- */
@@ -1101,4 +1255,209 @@ a {
   background: rgba(185, 176, 160, 0.08);
   padding: 1px 5px;
   border-radius: var(--rpl-radius-sm);
+}
+
+/* ---- /currently ------------------------------------------------------- */
+
+.currently-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--rpl-space-2);
+}
+
+.currently-list__item {
+  display: flex;
+  align-items: center;
+  gap: var(--rpl-space-3);
+  padding: var(--rpl-space-3) var(--rpl-space-4);
+  background: var(--rpl-panel);
+  border: 1px solid var(--rpl-border);
+  border-radius: var(--rpl-radius-md);
+}
+
+.currently-list__name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.currently-list__delta {
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  font-size: 13px;
+  letter-spacing: var(--rpl-tracking-label);
+}
+
+.currently-list__delta--up {
+  color: var(--rpl-good);
+}
+
+.currently-list__delta--down {
+  color: var(--rpl-danger);
+}
+
+.streak-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rpl-space-3);
+}
+
+.streak-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--rpl-space-2) var(--rpl-space-3);
+  border-radius: var(--rpl-radius-pill);
+  border: 1px solid var(--rpl-border-strong);
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: var(--rpl-tracking-label);
+  color: var(--rpl-text-dim);
+}
+
+.streak-badge--w {
+  color: var(--rpl-good);
+  border-color: var(--rpl-good);
+}
+
+.streak-badge--l {
+  color: var(--rpl-danger);
+  border-color: var(--rpl-danger);
+}
+
+/* ---- home page sliver stack -------------------------------------------- */
+
+/* Each sliver is a full-card link to one of the season-scoped tabs — a taste
+   of that page's actual content, not just a styled nav item, so the home
+   page reads as a hub you travel out from rather than a dead end. */
+.sliver-stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rpl-space-3);
+}
+
+.sliver {
+  display: flex;
+  align-items: center;
+  gap: var(--rpl-space-5);
+  background: var(--rpl-panel-gradient);
+  border: 1px solid var(--rpl-border);
+  border-left: 3px solid var(--rpl-accent-deep);
+  border-radius: var(--rpl-radius-lg);
+  padding: var(--rpl-space-4) var(--rpl-space-5);
+  box-shadow: var(--rpl-shadow-bar);
+  transition: border-color 150ms ease, transform 150ms ease,
+    box-shadow 150ms ease;
+}
+
+.sliver:hover {
+  border-color: var(--rpl-border-strong);
+  border-left-color: var(--rpl-accent-bright);
+  transform: translateX(2px);
+  box-shadow: var(--rpl-shadow-panel);
+}
+
+.sliver__head {
+  flex: none;
+  width: 130px;
+}
+
+.sliver__eyebrow {
+  margin: 0 0 2px;
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: var(--rpl-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--rpl-text-faint);
+}
+
+.sliver__title {
+  margin: 0;
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--rpl-text);
+}
+
+.sliver__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.sliver__headline {
+  margin: 0;
+  color: var(--rpl-text-dim);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.sliver__meta {
+  margin: 2px 0 0;
+  color: var(--rpl-text-faint);
+  font-size: 12px;
+}
+
+.sliver__items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--rpl-space-2) var(--rpl-space-5);
+}
+
+.sliver__item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--rpl-text-dim);
+  white-space: nowrap;
+}
+
+.sliver__item-rank {
+  color: var(--rpl-text-faint);
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 12px;
+}
+
+.sliver__item-value {
+  color: var(--rpl-text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.sliver__arrow {
+  flex: none;
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 18px;
+  color: var(--rpl-text-faint);
+  transition: transform 150ms ease, color 150ms ease;
+}
+
+.sliver:hover .sliver__arrow {
+  color: var(--rpl-accent-bright);
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .sliver {
+    flex-wrap: wrap;
+    gap: var(--rpl-space-3);
+  }
+
+  .sliver__head {
+    width: auto;
+  }
+
+  .sliver__arrow {
+    display: none;
+  }
 }
