@@ -13,6 +13,8 @@ import { awards } from "@/lib/awards";
 import { standingsMovement, teamStreaks } from "@/lib/currently";
 import { teamAccent, teamName } from "@/lib/teams";
 import { AwardsBug } from "@/components/AwardsBug";
+import { ClipSpotlight } from "@/components/ClipSpotlight";
+import { clipChannel, spotlightClips } from "@/lib/clips";
 
 /**
  * What the Currently sliver teases, in priority order — the most interesting
@@ -91,6 +93,7 @@ export default function HomePage() {
     0
   );
   const improved = mostImproved(board);
+  const clips = spotlightClips();
 
   return (
     <div className="shell stack">
@@ -117,11 +120,6 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
-
-      <AwardsBug
-        awards={races}
-        through={`Season ${CURRENT_SEASON} · through Match Day ${DAYS_PLAYED}`}
-      />
 
       <section>
         <div className="section__head">
@@ -304,6 +302,13 @@ export default function HomePage() {
           </Link>
         </div>
       </section>
+
+      <AwardsBug
+        awards={races}
+        through={`Season ${CURRENT_SEASON} · through Match Day ${DAYS_PLAYED}`}
+      />
+
+      <ClipSpotlight clips={clips} channel={clipChannel()} />
     </div>
   );
 }

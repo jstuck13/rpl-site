@@ -38,6 +38,22 @@ tracker holds cumulative player stats, not per-series scorelines, so match-day
 results are entered by hand from the recaps. Logging a match day means updating
 both the tracker (for values) and `results.json` (for scores).
 
+**Fetched from YouTube** — `clips.json`, the Watch panel on the home page.
+`npm run clips` reads the channel's public RSS feed (no API key, no OAuth) and
+rewrites the file. Ordering is deliberate: **the newest upload is always first,
+then everything else by view count descending** — lead with what's new, follow
+with what performed. The `channelId` lives in the JSON, so pointing it at a
+different channel is a data edit, not a code edit.
+
+It **fails soft**. If YouTube is unreachable or the feed parses to zero
+entries, the committed file is left untouched and the script exits 0 — same
+principle as the tracker: an external source that breaks must never be able to
+break the site. That does mean a silent no-op is possible, so the script prints
+what it did either way; read the line it emits.
+
+The panel is static like everything else, so it only changes on a rebuild. It
+hides itself entirely when `clips` is empty.
+
 **Built from markdown** — `profiles.json`, `team-profiles.json`, `recaps.json`.
 Sources live in gitignored `data/raw/` directories and are drafted from the RPL
 OPS project docs, so each has a build script that strips internal notes and
@@ -159,14 +175,14 @@ Rules for styling anything new:
 - `GraphicFrame`, `Scorebug`, `LowerThird` and `MatchupHeader` are **broadcast
   furniture** hard-coded to 1080px. Do not use them for page layout.
 
-### No team colors exist
+### Team colors
 
-Every club renders in brand gold. The design system is explicit that its orange
-and blue are in-game side colors, *not* brand colors, and `TeamChip` is an
-uncolored pill. When Jacob picks team colors, fill in `accent` for each team in
-`src/lib/teams.ts` — standings, team cards and player pages all read from
-`teamAccent()`, so nothing else needs touching. Adding them to the design system
-as real tokens would let the Discord graphics use them too.
+Filled in 2026-09-03. Each Season 2 club has an `accent` in `src/lib/teams.ts`,
+and standings, team cards and player pages all read `teamAccent()`. Season 1
+alumni (FWG/TD/TTT) are deliberately left unset and fall back to neutral chrome,
+which is right for a historical record. Site chrome itself is the neutral
+`--rpl-accent` family; gold is reserved for genuine medal and award contexts.
+Full detail in `TEAM-COLORS-HANDOFF.md`.
 
 ## Layout of the code
 
@@ -204,6 +220,7 @@ present it as a ruling.
 ```bash
 npm run dev      # http://localhost:3000
 npm run data     # regenerate src/data/*.json from data/raw/tracker.json
+npm run clips    # refresh src/data/clips.json from the YouTube channel RSS
 npm run profiles # player + team profiles from data/raw/profiles/
 npm run recaps   # match day recaps from data/raw/recaps/
 npm run build    # production build — always run before pushing

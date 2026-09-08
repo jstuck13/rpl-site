@@ -1461,3 +1461,222 @@ a {
     display: none;
   }
 }
+
+/* ---- Clip spotlight -------------------------------------------------------
+   One featured clip at a time, cycling. Thumbnails link out to YouTube rather
+   than embedding a player, so the home page pulls no third-party scripts.
+
+   Two columns, not a wide stage with text over the image: RPL's clips are
+   Shorts, and a 16:9 stage left the video as a narrow strip in a field of
+   blur while centred captions collided with the clip's own burned-in text.
+
+   Frames are stacked and cross-faded rather than swapped, which keeps the
+   card from collapsing between clips. Only opacity animates.               */
+
+.clips__stage {
+  border-radius: var(--rpl-radius-lg);
+  border: 1px solid var(--rpl-border);
+  box-shadow: var(--rpl-shadow-bar);
+  background: var(--rpl-panel-gradient);
+  overflow: hidden;
+}
+
+.clips__card {
+  display: flex;
+  align-items: stretch;
+  gap: var(--rpl-space-6);
+  padding: var(--rpl-space-5);
+  transition: background 180ms ease;
+}
+.clips__card:hover {
+  background: color-mix(in srgb, var(--rpl-panel-raised) 70%, transparent);
+}
+
+/* --- media column --- */
+
+.clips__media {
+  position: relative;
+  flex: none;
+  width: 196px;
+  aspect-ratio: 9 / 16;
+  border-radius: var(--rpl-radius-md);
+  overflow: hidden;
+  background: var(--rpl-bg);
+}
+
+.clips__frames {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.clips__frame {
+  position: absolute;
+  inset: 0;
+  display: block;
+  opacity: 0;
+  transition: opacity 420ms ease;
+}
+.clips__frame--on {
+  opacity: 1;
+}
+
+/* YouTube returns every thumbnail as 4:3 with the real frame boxed inside —
+   pillarboxed for a Short, letterboxed for a landscape video. Cropping to the
+   true aspect strips those bars instead of showing them. A landscape clip is
+   centre-cropped to fit the portrait column, which is the tradeoff for a
+   column that never changes width between clips. */
+.clips__shot {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.clips__shot--vertical {
+  /* the 4:3 thumbnail is 133% as wide as the portrait column is tall */
+  width: auto;
+  height: 100%;
+  max-width: none;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  object-fit: cover;
+}
+
+.clips__play {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--rpl-radius-pill);
+  border: 2px solid var(--rpl-accent);
+  background: color-mix(in srgb, var(--rpl-bg) 62%, transparent);
+  color: var(--rpl-text);
+  padding-left: 3px; /* optical centring for the triangle */
+  transition: border-color 150ms ease, transform 150ms ease,
+    background 150ms ease;
+}
+.clips__card:hover .clips__play {
+  border-color: var(--rpl-accent-bright);
+  background: color-mix(in srgb, var(--rpl-bg) 80%, transparent);
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* --- text column --- */
+
+.clips__body {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: var(--rpl-space-2);
+}
+
+.clips__eyebrow {
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 11px;
+  letter-spacing: var(--rpl-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--rpl-text-faint);
+}
+
+.clips__title {
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 1.15;
+  color: var(--rpl-text);
+  text-wrap: balance;
+}
+
+.clips__meta {
+  font-size: 12px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-text-faint);
+}
+
+.clips__cta {
+  margin-top: var(--rpl-space-2);
+  font-family: var(--rpl-font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: var(--rpl-tracking-label);
+  text-transform: uppercase;
+  color: var(--rpl-accent);
+  transition: color 150ms ease;
+}
+.clips__card:hover .clips__cta {
+  color: var(--rpl-accent-bright);
+}
+
+/* --- dots --- */
+
+.clips__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--rpl-space-2);
+  margin-top: var(--rpl-space-3);
+}
+.clips__dot {
+  appearance: none;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border-radius: var(--rpl-radius-pill);
+  border: 1px solid var(--rpl-border-strong);
+  background: transparent;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+.clips__dot:hover {
+  border-color: var(--rpl-accent);
+}
+.clips__dot--on {
+  background: var(--rpl-accent);
+  border-color: var(--rpl-accent);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .clips__card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: var(--rpl-space-4);
+  }
+  .clips__media {
+    width: 168px;
+  }
+  .clips__body {
+    align-items: center;
+  }
+  .clips__title {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clips__frame {
+    transition: none;
+  }
+  .clips__card:hover .clips__play {
+    transform: translate(-50%, -50%);
+  }
+}

@@ -8,6 +8,7 @@
     "start": "next start",
     "lint": "eslint",
     "data": "node scripts/parse-tracker.mjs",
+    "clips": "node scripts/fetch-clips.mjs",
     "profiles": "node scripts/build-profiles.mjs",
     "recaps": "node scripts/build-recaps.mjs"
   },
