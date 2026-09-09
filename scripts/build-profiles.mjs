@@ -26,7 +26,7 @@
  */
 
 import { readFileSync, writeFileSync, readdirSync, existsSync } from "node:fs";
-import { dirname, resolve, basename } from "node:path";
+import { dirname, resolve, basename, relative } from "node:path";
 import { fileURLToPath } from "node:url";
 import { marked } from "marked";
 import season1 from "../src/data/season1.json" with { type: "json" };
@@ -119,13 +119,6 @@ function parse(markdown) {
 
 /** Read a directory of profile markdown, strip the internal parts, return JSON. */
 function buildProfiles(dir, label) {
-  if (!existsSync(dir)) {
-    throw new Error(
-      `No profile source at ${dir}. These are gitignored — copy them from the ` +
-        `RPL OPS Claude project before running this.`
-    );
-  }
-
   const files = readdirSync(dir).filter((f) => f.endsWith(".md"));
   const profiles = {};
   let dropped = 0;
@@ -173,20 +166,60 @@ function buildProfiles(dir, label) {
   return { profiles, dropped };
 }
 
-function main() {
-  const players = buildProfiles(IN, "players");
-  writeFileSync(OUT, JSON.stringify(players.profiles, null, 2) + "\n");
-  console.log(
-    `profiles.json — ${Object.keys(players.profiles).length} players, ` +
-      `${players.dropped} internal sections dropped`
-  );
+/**
+ * Build one group, or leave its committed JSON alone if the sources aren't on
+ * this machine.
+ *
+ * The sources are gitignored, so a clone only has whichever groups its owner
+ * happens to have copied down from the RPL OPS project. That must not be able
+ * to fail `npm run matchday` — the run would abort partway, after earlier steps
+ * had already written files, over content that isn't stale and didn't need
+ * rebuilding. Same principle as the clips fetcher: an input that isn't there is
+ * a skip, not a failure.
+ *
+ * It IS still fatal when there's no committed output to fall back on, because
+ * then the site genuinely can't build. And the leak guard inside buildProfiles
+ * stays fatal in every case — that one is about not publishing internal notes,
+ * which is a different thing entirely.
+ */
+function buildGroup({ dir, out, label, name }) {
+  if (!existsSync(dir)) {
+    if (!existsSync(out)) {
+      throw new Error(
+        `No profile source at ${dir}, and no committed ${name} to fall back ` +
+          `on. Copy the sources from the RPL OPS Claude project before running ` +
+          `this.`
+      );
+    }
+    console.warn(
+      `  ${name} — SKIPPED, no sources at ${relative(ROOT, dir)}.\n` +
+        `  Left the committed file as-is. These sources are gitignored; copy\n` +
+        `  them from the RPL OPS Claude project if you meant to rebuild them.`
+    );
+    return;
+  }
 
-  const teams = buildProfiles(TEAMS_IN, "teams");
-  writeFileSync(TEAMS_OUT, JSON.stringify(teams.profiles, null, 2) + "\n");
+  const { profiles, dropped } = buildProfiles(dir, label);
+  writeFileSync(out, JSON.stringify(profiles, null, 2) + "\n");
   console.log(
-    `team-profiles.json — ${Object.keys(teams.profiles).length} teams, ` +
-      `${teams.dropped} internal sections dropped`
+    `${name} — ${Object.keys(profiles).length} ${label}, ` +
+      `${dropped} internal sections dropped`
   );
+}
+
+function main() {
+  buildGroup({
+    dir: IN,
+    out: OUT,
+    label: "players",
+    name: "profiles.json",
+  });
+  buildGroup({
+    dir: TEAMS_IN,
+    out: TEAMS_OUT,
+    label: "teams",
+    name: "team-profiles.json",
+  });
 }
 
 main();
