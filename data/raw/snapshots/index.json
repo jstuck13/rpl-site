@@ -1,0 +1,17 @@
+{
+  "note": "Dated snapshots of RPL_Master_Tracker. Each file has the same shape as data/raw/tracker.json ({\"fileContent\": \"<sheet as markdown>\"}), so anything that can parse tracker.json can parse a snapshot. This manifest is the index a value-history builder should read.",
+  "sourceFileId": "10UJgkD8qTViTfeB61YtWLNVP4YvPcqs79URWG6JeX6I",
+  "sourceFileName": "RPL_Master_Tracker",
+  "snapshots": [
+    {
+      "file": "tracker-2026-09-09.json",
+      "capturedAt": "2026-09-09",
+      "season": 2,
+      "throughMatchDay": 1,
+      "bytes": 98255,
+      "sha256": "81abac9d0bfced37f6f200fda006c2b9e1418fafd85723eeb3ef20c4b8b1d51a",
+      "capturedBy": "cowork-session",
+      "note": "Baseline. Taken between Match Day 1 and Match Day 2; byte-identical to data/raw/tracker.json at time of capture."
+    }
+  ]
+}

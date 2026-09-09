@@ -226,6 +226,27 @@ a {
   background: rgba(184, 157, 122, 0.1);
 }
 
+/* Group labels inside the Seasons menu. The current season's views and a
+   finished season's single page are different kinds of thing, so they get
+   separated rather than listed flat — see the note in layout.tsx. Not
+   focusable and not links: purely a label. */
+.site-nav__dropdown-heading {
+  margin: 0;
+  padding: var(--rpl-space-2) var(--rpl-space-3) 4px;
+  font-family: var(--rpl-font-display);
+  font-weight: 700;
+  font-size: 10px;
+  letter-spacing: var(--rpl-tracking-eyebrow);
+  text-transform: uppercase;
+  color: var(--rpl-text-faint);
+}
+
+.site-nav__dropdown-heading--past {
+  margin-top: var(--rpl-space-2);
+  padding-top: var(--rpl-space-2);
+  border-top: 1px solid var(--rpl-border);
+}
+
 .site-footer__link {
   color: var(--rpl-accent);
 }
@@ -1679,4 +1700,31 @@ a {
   .clips__card:hover .clips__play {
     transform: translate(-50%, -50%);
   }
+}
+
+/* ---- deltas --------------------------------------------------------------- */
+
+/* A signed money change in a table cell. The currently-page has its own
+   scoped version (.currently-list__delta); this is the shared one for tables. */
+.delta {
+  font-variant-numeric: tabular-nums;
+  color: var(--rpl-text-dim);
+}
+
+.delta--up {
+  color: var(--rpl-good);
+}
+
+.delta--down {
+  color: var(--rpl-danger);
+}
+
+/* An opening paragraph under a page title — larger than body text, but not a
+   .note (which is a boxed aside) and not .hero__lede (which belongs to the
+   home page hero). */
+.page-lede {
+  margin: var(--rpl-space-3) 0 0;
+  max-width: 62ch;
+  font-size: 16px;
+  color: var(--rpl-text-dim);
 }

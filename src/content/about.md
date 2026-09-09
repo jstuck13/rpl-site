@@ -25,65 +25,38 @@ for it to become something people actually watch, follow, and engage with —
 an entertainment product with its own storylines and characters — while
 also staying a door that's open for someone new to walk through.
 
-## Season 2
+## How a season works
 
-Six clubs of three players each, run by manager-captains who build their
-rosters from scratch every season in a live auction.
+Clubs of three players each, run by manager-captains who build their rosters
+from scratch every season.
 
-### Format
+Nothing is persistent. Every season, every roster spot is filled again in a
+live auction: captains take turns nominating players, anyone can bid, and
+each club is spending against a salary cap rather than picking in a fixed
+order. When the money and the spots run out, rosters lock for the season.
+A roster is a set of bets, and the bets are public.
 
-Each club plays a double round robin — every club faces every other club
-twice across the season. Regular-season series are best-of-three.
+The currency is **Player Value** — one number per player, and the thing the
+whole draft economy runs on. It isn't a ranking of who's best; it's closer
+to a price. It starts from a player's previous season (or their in-game
+rank, if they're new to RPL) and moves as they actually play. A rising value
+means a player is outperforming what he cost. Current values are on the
+[leaderboard](/leaderboard).
 
-All six clubs make the playoffs, seeded by regular-season record. The top
-two seeds get a bye straight to the semifinals; the other four play
-quarterfinals (#3 vs #6, #4 vs #5) to fill out the bracket. Every playoff
-series — quarterfinal, semifinal, final — is best-of-seven.
+Each club plays every other club twice, and then every one of them goes to
+a playoff bracket. Four individual awards run alongside the table all season — most
+goals, most assists, and the two average-per-game races. Where each one
+stands right now is on [Currently](/currently).
 
-### The auction draft
+The format itself changes between seasons. [Season 1](/seasons/1) was five
+clubs and a snake draft; the auction, the salary cap and the sixth club all
+came out of that season actually being played rather than a plan made in
+advance — which is the model working as intended.
 
-Rosters aren't persistent. Every season, all eighteen roster spots are
-filled from scratch: six captains are seeded in at their own Player Value,
-and the rest of the pool goes to a live auction. Captains take turns
-nominating players, anyone can bid, and the winning bid comes off that
-club's salary cap. When the money and the roster spots run out, the draft is
-over and rosters lock for the season — no trades, no roster changes.
-
-Season 2's cap is $23,743 per club — set at 110% of the previous season's
-championship roster's value, so the cap itself moves with how the league
-actually played out.
-
-### Player Value
-
-Every player carries a single number, Player Value, and it's what the whole
-draft economy runs on. It isn't a rank of who's best — it's closer to a
-price. It starts from a player's previous-season performance (or their
-in-game rank, if they're new to RPL), and moves from there based on how they
-actually play: goals, assists, saves, and the rest, tracked match by match.
-A rising value means a player is outperforming what they cost.
-
-Current values for every player are on the [leaderboard](/leaderboard).
-
-### Season awards
-
-Four races run all season, tracked for active rostered players only:
-
-- **Season MVP** — highest average points per game.
-- **Golden Boot** — most goals.
-- **Golden Laces** — most assists.
-- **Golden Gloves** — highest average saves per game.
-
-Where things stand right now is on the [home page](/) and
-[Currently](/currently).
-
-### What's changed since Season 1
-
-The league grew from five clubs to six, and eighteen players are now
-drafted each season instead of fifteen. The draft itself changed too — Season
-1 used a snake draft; Season 2 moved to a live auction with a salary cap, so
-a club's roster is a set of bets against a budget instead of a fixed pick
-order. Both changes came out of the first season actually being played, not
-a plan made in advance — which is the model working as intended.
+**The exact version of all of this** — cap figures, series lengths, the
+playoff bracket, nomination order, how awards are calculated, and the
+handful of things still deliberately undecided — is on the
+[rules page](/rules), along with a log of what has changed between seasons.
 
 ## Curious?
 

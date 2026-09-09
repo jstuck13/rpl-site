@@ -12,6 +12,7 @@ import { formatTime, nextUp } from "@/lib/next-up";
 import { awards } from "@/lib/awards";
 import { standingsMovement, teamStreaks } from "@/lib/currently";
 import { teamAccent, teamName } from "@/lib/teams";
+import { draftBoard } from "@/lib/draft";
 import { AwardsBug } from "@/components/AwardsBug";
 import { ClipSpotlight } from "@/components/ClipSpotlight";
 import { clipChannel, spotlightClips } from "@/lib/clips";
@@ -94,6 +95,13 @@ export default function HomePage() {
   );
   const improved = mostImproved(board);
   const clips = spotlightClips();
+
+  // Two biggest value movers since the auction, for the Draft sliver. Only
+  // players who have actually played can move, so this stays empty until a
+  // match day is logged rather than showing a row of zeroes.
+  const draftMovers = draftBoard()
+    .filter((row) => row.played && row.sinceDraft !== null && row.sinceDraft !== 0)
+    .slice(0, 2);
 
   return (
     <div className="shell stack">
@@ -272,6 +280,39 @@ export default function HomePage() {
                   </li>
                 ))}
               </ul>
+            </div>
+            <span className="sliver__arrow" aria-hidden="true">
+              →
+            </span>
+          </Link>
+
+          <Link href="/draft" className="sliver">
+            <div className="sliver__head">
+              <p className="sliver__eyebrow">Auction</p>
+              <p className="sliver__title">Draft</p>
+            </div>
+            <div className="sliver__body">
+              {draftMovers.length > 0 ? (
+                <ul className="sliver__items">
+                  {draftMovers.map((row) => (
+                    <li key={row.pick.slug} className="sliver__item">
+                      <span
+                        className="team-dot"
+                        style={{ background: teamAccent(row.pick.team) }}
+                      />
+                      {row.player.name}
+                      <span className="sliver__item-value">
+                        {(row.sinceDraft ?? 0) >= 0 ? "+" : "−"}$
+                        {Math.abs(row.sinceDraft ?? 0).toLocaleString("en-US")}
+                      </span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="sliver__headline">
+                  What every club paid at the auction.
+                </p>
+              )}
             </div>
             <span className="sliver__arrow" aria-hidden="true">
               →

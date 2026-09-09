@@ -41,10 +41,26 @@ export const TEAMS: Team[] = [
   { code: "LS", name: "Lawson State", slug: "lawson-state", season: 2, accent: "#008300" },
   { code: "OG", name: "Own Goal FC", slug: "own-goal-fc", season: 2, accent: "#e66767" },
 
-  // Season 1 (kept so alumni rows still resolve to a name; no accent — see above)
-  { code: "FWG", name: "FWG", slug: "fwg", season: 1 },
-  { code: "TD", name: "TD", slug: "td", season: 1 },
-  { code: "TTT", name: "TTT", slug: "ttt", season: 1 },
+  // Season 1 (kept so alumni rows still resolve to a name; no accent — see above).
+  //
+  // 999 and Lawson State played in Season 1 too, but a Team here belongs to
+  // exactly ONE season, so they are registered under Season 2 only and are
+  // deliberately not duplicated here — a second entry under the same code would
+  // shadow the Season 2 one in BY_CODE and strip its accent. Consequence:
+  // `teamsForSeason(1)` returns these three and NOT 999/LS, so it is the wrong
+  // tool for anything cross-season. Group by the players' own team codes
+  // instead (see lib/archive.ts).
+  //
+  // Fire Water Gang and Bucky Irving FC are unrelated clubs. FWG was entered
+  // for Season 2 as well, then dropped out before play, and DrewAJC's Bucky
+  // Irving FC took the vacated slot. BI is NOT a renamed FWG — confirmed by
+  // Jacob 2026-09-09, correcting an earlier project doc that described it as
+  // a rename. That is why FWG appears in Season 2 artefacts predating the
+  // withdrawal (the nuanced-stats sheet, early draft tabs) and nowhere in the
+  // Season 2 results.
+  { code: "FWG", name: "Fire Water Gang", slug: "fire-water-gang", season: 1 },
+  { code: "TD", name: "Tommy Dead", slug: "tommy-dead", season: 1 },
+  { code: "TTT", name: "Triple T", slug: "triple-t", season: 1 },
 ];
 
 const BY_CODE = new Map(TEAMS.map((t) => [t.code, t]));

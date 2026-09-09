@@ -1,0 +1,116 @@
+{
+  "season": 2,
+  "note": "Season 2 auction draft, completed 2026-08-28. Prices are final and never change, so this file is hand-maintained rather than generated. Captains were auto-drafted onto their own club at their own Player Value \u2014 those rows are a mechanic, not a bid.",
+  "salaryCap": 23743,
+  "capBasis": "110% of the Season 1 champion's final roster value ($21,585).",
+  "picks": [
+    {
+      "slug": "llellum",
+      "paid": 15000,
+      "team": "FF",
+      "captain": true
+    },
+    {
+      "slug": "jart",
+      "paid": 12689,
+      "team": "CG",
+      "captain": false
+    },
+    {
+      "slug": "tlboryczka",
+      "paid": 12591,
+      "team": "OG",
+      "captain": false
+    },
+    {
+      "slug": "misnfrmd",
+      "paid": 10317,
+      "team": "LS",
+      "captain": false
+    },
+    {
+      "slug": "astro",
+      "paid": 9269,
+      "team": "LS",
+      "captain": true
+    },
+    {
+      "slug": "f1yte-bacon",
+      "paid": 8655,
+      "team": "CG",
+      "captain": true
+    },
+    {
+      "slug": "blockymalrd",
+      "paid": 8091,
+      "team": "BI",
+      "captain": false
+    },
+    {
+      "slug": "madlabs",
+      "paid": 8041,
+      "team": "999",
+      "captain": true
+    },
+    {
+      "slug": "draterbmud",
+      "paid": 7000,
+      "team": "BI",
+      "captain": false
+    },
+    {
+      "slug": "bl4zedaddy",
+      "paid": 6736,
+      "team": "OG",
+      "captain": true
+    },
+    {
+      "slug": "sajar47",
+      "paid": 5719,
+      "team": "FF",
+      "captain": false
+    },
+    {
+      "slug": "killua",
+      "paid": 5590,
+      "team": "999",
+      "captain": false
+    },
+    {
+      "slug": "on-rollr",
+      "paid": 4366,
+      "team": "999",
+      "captain": false
+    },
+    {
+      "slug": "aowtty",
+      "paid": 4157,
+      "team": "LS",
+      "captain": false
+    },
+    {
+      "slug": "drewajc",
+      "paid": 3063,
+      "team": "BI",
+      "captain": true
+    },
+    {
+      "slug": "spam-god6450",
+      "paid": 3025,
+      "team": "OG",
+      "captain": false
+    },
+    {
+      "slug": "trs-1000",
+      "paid": 2400,
+      "team": "FF",
+      "captain": false
+    },
+    {
+      "slug": "ugadawg50",
+      "paid": 900,
+      "team": "CG",
+      "captain": false
+    }
+  ]
+}

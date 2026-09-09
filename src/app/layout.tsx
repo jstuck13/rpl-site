@@ -18,22 +18,42 @@ export const metadata: Metadata = {
  * page spans multiple seasons; About explains the concept once). Standings,
  * Schedule, Recaps, Leaderboard, and Teams are all specific to whichever
  * season is current — rosters and results reset every season — so they live
- * under the "Season N" dropdown instead of cluttering the top level.
+ * under the "Seasons" dropdown instead of cluttering the top level.
+ *
+ * The dropdown is grouped rather than flat, because the two kinds of entry in
+ * it are not peers: the current season has MANY views (standings, schedule,
+ * …) while a finished season has exactly ONE page. A flat list makes
+ * "Season 1" read as a sibling of "Standings", i.e. as Season 1's standings.
+ * The headings make the asymmetry legible, and it is permanent — every season
+ * ends up as a single archive row once the next one starts.
+ *
+ * At rollover this is a data change, not a restructure: the current-season
+ * list keeps its hrefs, and the season that just ended joins PAST_SEASONS.
+ *
+ * When PAST_SEASONS grows past two or three, this menu gets long and the
+ * right move is to promote seasons to hub pages (/seasons/2 and so on) and
+ * let the home page's sliver stack be the current season's hub — it already
+ * is one. Not worth doing for a single archived season.
  */
 const NAV = [
   { href: "/", label: "Home" },
   { href: "/about", label: "About" },
+  { href: "/rules", label: "Rules" },
   { href: "/players", label: "Players" },
 ];
 
-const SEASON_NAV = [
+const CURRENT_SEASON_NAV = [
   { href: "/currently", label: "Currently" },
   { href: "/standings", label: "Standings" },
   { href: "/schedule", label: "Schedule" },
   { href: "/recaps", label: "Recaps" },
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/teams", label: "Teams" },
+  { href: "/draft", label: "Draft" },
 ];
+
+/** Finished seasons, newest first. One page each. */
+const PAST_SEASONS = [{ href: "/seasons/1", label: "Season 1" }];
 
 export default function RootLayout({
   children,
@@ -64,11 +84,26 @@ export default function RootLayout({
                   className="site-nav__dropdown-trigger"
                   aria-haspopup="true"
                 >
-                  Season {CURRENT_SEASON}
+                  Seasons
                   <span className="site-nav__caret" aria-hidden="true" />
                 </button>
                 <div className="site-nav__dropdown-menu">
-                  {SEASON_NAV.map((item) => (
+                  <p className="site-nav__dropdown-heading">
+                    Season {CURRENT_SEASON}
+                  </p>
+                  {CURRENT_SEASON_NAV.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="site-nav__dropdown-link"
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                  <p className="site-nav__dropdown-heading site-nav__dropdown-heading--past">
+                    Past
+                  </p>
+                  {PAST_SEASONS.map((item) => (
                     <Link
                       key={item.href}
                       href={item.href}
