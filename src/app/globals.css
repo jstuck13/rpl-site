@@ -45,6 +45,21 @@ a {
 
 .main {
   padding: var(--rpl-space-7) 0 var(--rpl-space-8);
+
+  /* `.hero::before` — the decorative glow — is pinned at right: -80px so it
+     bleeds past the hero into the gutter, which looks right on a wide screen.
+     On anything narrower than roughly the shell's width plus 160px the gutter
+     is smaller than that bleed, so the glow pushed the page ~56px wider than
+     the viewport and gave EVERY page a horizontal scrollbar on a phone.
+
+     Clipping here rather than clamping the glow keeps the desktop look exactly
+     as it was: `.main` is full-width, so on a wide screen the glow never
+     reaches this edge and nothing changes. `clip` rather than `hidden` because
+     hidden would force overflow-y to auto and turn this into a scroll
+     container; and it goes on `.main` rather than `body` because
+     `.site-header` is position: sticky and an overflow on its ancestor would
+     silently kill that. */
+  overflow-x: clip;
 }
 
 .stack {
@@ -155,8 +170,7 @@ a {
   transition: color 120ms ease, border-color 120ms ease;
 }
 
-.site-nav__dropdown:hover .site-nav__dropdown-trigger,
-.site-nav__dropdown:focus-within .site-nav__dropdown-trigger {
+.site-nav__dropdown[data-open="true"] .site-nav__dropdown-trigger {
   color: var(--rpl-text);
   border-bottom-color: var(--rpl-accent-deep);
 }
@@ -171,14 +185,18 @@ a {
   transition: transform 120ms ease;
 }
 
-.site-nav__dropdown:hover .site-nav__caret,
-.site-nav__dropdown:focus-within .site-nav__caret {
+.site-nav__dropdown[data-open="true"] .site-nav__caret {
   transform: rotate(225deg) translateY(1px);
 }
 
-/* visibility (not display) so tabbing from the trigger keeps moving into
-   the links — display:none would pull them out of tab order entirely and
-   the menu would close the instant it opened. */
+/* Open/closed is decided by SeasonsMenu.tsx and rendered here via
+   [data-open]. It is deliberately NOT :hover/:focus-within — a hover-driven
+   menu opens on a phone but cannot be closed by tapping the trigger again,
+   which is a reported bug, not a theoretical one. See the component.
+
+   visibility (not display) so the links stay animatable and stay out of the
+   tab order while closed; display:none would also work for tab order but
+   kills the transition. */
 .site-nav__dropdown-menu {
   position: absolute;
   top: 100%;
@@ -200,11 +218,25 @@ a {
   z-index: 20;
 }
 
-.site-nav__dropdown:hover .site-nav__dropdown-menu,
-.site-nav__dropdown:focus-within .site-nav__dropdown-menu {
+.site-nav__dropdown[data-open="true"] .site-nav__dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateY(0);
+}
+
+/* On a phone the nav wraps and the Seasons trigger ends up far enough right
+   that a left-anchored menu runs past the screen edge — measured overflowing
+   at every width below ~460px, which also made the whole page scroll
+   sideways while the menu was open. Anchoring to the trigger's RIGHT edge
+   instead can't overflow, because the trigger itself is always on screen.
+   The breakpoint sits well above the measured threshold so a font change or
+   a longer nav label can't quietly reintroduce it. */
+@media (max-width: 600px) {
+  .site-nav__dropdown-menu {
+    left: auto;
+    right: 0;
+    max-width: calc(100vw - 24px);
+  }
 }
 
 .site-nav .site-nav__dropdown-link {

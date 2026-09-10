@@ -1,0 +1,66 @@
+{
+  "note": "Canonical club identity for RPL. The site reads this through src/lib/teams.ts; the graphics and availability skills read it directly instead of keeping their own hand-copied lists. Add or rename a club HERE and nothing else needs editing.",
+  "accentNote": "Accents were validated with the dataviz skill's categorical-colour method against the site's panel background (#14110a), as ADJACENT PAIRS IN THIS ARRAY ORDER. Keep the order, keep colour paired with the club name, and never let colour be the only identifier. Blue and orange are deliberately absent - the design system reserves them as in-game side colours. Season 1 clubs have no accent on purpose: they are a historical record, not one of the current identities.",
+  "clubs": [
+    {
+      "code": "999",
+      "name": "999",
+      "slug": "999",
+      "season": 2,
+      "accent": "#c98500"
+    },
+    {
+      "code": "BI",
+      "name": "Bucky Irving FC",
+      "slug": "bucky-irving-fc",
+      "season": 2,
+      "accent": "#199e70"
+    },
+    {
+      "code": "CG",
+      "name": "California Gurls",
+      "slug": "california-gurls",
+      "season": 2,
+      "accent": "#d55181"
+    },
+    {
+      "code": "FF",
+      "name": "Fortnite Flick FC",
+      "slug": "fortnite-flick-fc",
+      "season": 2,
+      "accent": "#9085e9"
+    },
+    {
+      "code": "LS",
+      "name": "Lawson State",
+      "slug": "lawson-state",
+      "season": 2,
+      "accent": "#008300"
+    },
+    {
+      "code": "OG",
+      "name": "Own Goal FC",
+      "slug": "own-goal-fc",
+      "season": 2,
+      "accent": "#e66767"
+    },
+    {
+      "code": "FWG",
+      "name": "Fire Water Gang",
+      "slug": "fire-water-gang",
+      "season": 1
+    },
+    {
+      "code": "TD",
+      "name": "Tommy Dead",
+      "slug": "tommy-dead",
+      "season": 1
+    },
+    {
+      "code": "TTT",
+      "name": "Triple T",
+      "slug": "triple-t",
+      "season": 1
+    }
+  ]
+}

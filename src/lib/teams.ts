@@ -1,27 +1,51 @@
 /**
  * Team registry.
  *
+ * The club list itself lives in `src/data/clubs.json` — NOT here. That file is
+ * the canonical source: the site reads it through this module, and the RPL
+ * graphics and availability skills read it directly instead of each keeping a
+ * hand-copied list. Add or rename a club there and nothing else needs editing.
+ *
+ * This module is the typed accessor over it, and nothing more. Everything the
+ * rest of the site imports (`teamName`, `teamAccent`, `teamsForSeason`, …) is
+ * unchanged.
+ *
  * The tracker stores teams as short codes in its Team column (an asterisk on
- * the code marks that player as the team's manager). This maps the codes to
+ * the code marks that player as the team's manager). These map the codes to
  * display names.
  *
- * `accent` — six colors, one per Season 2 club, picked with the dataviz
- * skill's categorical-color method (validate_palette.js): lightness band,
- * chroma floor, CVD adjacent-pair separation, normal-vision floor, and
- * surface contrast all pass against the site's actual panel background
- * (#14110a), in this fixed order (aqua, amber, rose, green, violet, red).
- * Deliberately excludes blue and orange — the design system reserves those
- * as in-game side colors, not brand colors, and reusing either for a team
- * would clash on any page showing a match. Two things keep this palette
- * valid: teams render in this same order everywhere they appear together
- * (draft order, used consistently — don't re-sort by e.g. squad value in a
- * context that puts colors next to each other in a new arrangement), and a
- * color is never the sole identifier — always paired with the team name via
- * TeamChip/team-card, never color alone. Season 1 alumni teams (FWG/TD/TTT)
- * are left unset on purpose — they predate this palette and fall back to the
- * neutral --rpl-accent chrome color, which is correct: they're historical
- * record, not clubs playing for one of the six identities.
+ * `accent` — one colour per Season 2 club, picked with the dataviz skill's
+ * categorical-colour method (lightness band, chroma floor, CVD adjacent-pair
+ * separation, normal-vision floor, surface contrast) against the site's actual
+ * panel background (#14110a). Two things keep that validation true and both
+ * are easy to break:
+ *
+ *   1. The colours were checked as ADJACENT PAIRS IN clubs.json'S ORDER. Clubs
+ *      must render in that same order wherever they appear together — don't
+ *      re-sort by squad value in a context that puts colours side by side.
+ *   2. A colour is never the sole identifier. Always pair it with the club
+ *      name, as TeamChip and the team-dot do.
+ *
+ * Blue and orange are deliberately absent: the design system reserves them as
+ * in-game side colours, and reusing either would clash on any page showing a
+ * match.
+ *
+ * A club belongs to exactly ONE season here. 999 and Lawson State played in
+ * both and are registered under Season 2, so `teamsForSeason(1)` returns only
+ * the three Season 1 clubs and is the WRONG tool for anything cross-season —
+ * group by the players' own team codes instead (see `src/lib/archive.ts`).
+ * Registering a duplicate entry under the same code would shadow the Season 2
+ * one and strip its accent.
+ *
+ * Fire Water Gang and Bucky Irving FC are unrelated clubs. FWG was entered for
+ * Season 2 as well, then dropped out before play, and DrewAJC's Bucky Irving FC
+ * took the vacated slot. BI is NOT a renamed FWG — confirmed by Jacob
+ * 2026-09-09, correcting an earlier project doc that described it as a rename.
+ * That is why FWG appears in Season 2 artefacts predating the withdrawal (the
+ * nuanced-stats sheet, early draft tabs) and nowhere in the Season 2 results.
  */
+
+import clubs from "@/data/clubs.json";
 
 export interface Team {
   code: string;
@@ -32,36 +56,7 @@ export interface Team {
   accent?: string;
 }
 
-export const TEAMS: Team[] = [
-  // Season 2 — accents in fixed draft order (see note above)
-  { code: "999", name: "999", slug: "999", season: 2, accent: "#c98500" },
-  { code: "BI", name: "Bucky Irving FC", slug: "bucky-irving-fc", season: 2, accent: "#199e70" },
-  { code: "CG", name: "California Gurls", slug: "california-gurls", season: 2, accent: "#d55181" },
-  { code: "FF", name: "Fortnite Flick FC", slug: "fortnite-flick-fc", season: 2, accent: "#9085e9" },
-  { code: "LS", name: "Lawson State", slug: "lawson-state", season: 2, accent: "#008300" },
-  { code: "OG", name: "Own Goal FC", slug: "own-goal-fc", season: 2, accent: "#e66767" },
-
-  // Season 1 (kept so alumni rows still resolve to a name; no accent — see above).
-  //
-  // 999 and Lawson State played in Season 1 too, but a Team here belongs to
-  // exactly ONE season, so they are registered under Season 2 only and are
-  // deliberately not duplicated here — a second entry under the same code would
-  // shadow the Season 2 one in BY_CODE and strip its accent. Consequence:
-  // `teamsForSeason(1)` returns these three and NOT 999/LS, so it is the wrong
-  // tool for anything cross-season. Group by the players' own team codes
-  // instead (see lib/archive.ts).
-  //
-  // Fire Water Gang and Bucky Irving FC are unrelated clubs. FWG was entered
-  // for Season 2 as well, then dropped out before play, and DrewAJC's Bucky
-  // Irving FC took the vacated slot. BI is NOT a renamed FWG — confirmed by
-  // Jacob 2026-09-09, correcting an earlier project doc that described it as
-  // a rename. That is why FWG appears in Season 2 artefacts predating the
-  // withdrawal (the nuanced-stats sheet, early draft tabs) and nowhere in the
-  // Season 2 results.
-  { code: "FWG", name: "Fire Water Gang", slug: "fire-water-gang", season: 1 },
-  { code: "TD", name: "Tommy Dead", slug: "tommy-dead", season: 1 },
-  { code: "TTT", name: "Triple T", slug: "triple-t", season: 1 },
-];
+export const TEAMS: Team[] = clubs.clubs as Team[];
 
 const BY_CODE = new Map(TEAMS.map((t) => [t.code, t]));
 
@@ -73,6 +68,14 @@ export function teamName(code: string | null | undefined): string {
   return teamByCode(code)?.name ?? code ?? "—";
 }
 
+/**
+ * A club's colour, or the neutral chrome accent for clubs that have none.
+ *
+ * NOTE the fallback is a CSS variable, which is fine in the browser and NOT
+ * fine anywhere CSS variables don't exist — Satori resolves it to `initial`
+ * and throws. `src/lib/og.tsx` guards against that; anything else rendering
+ * outside the browser must too.
+ */
 export function teamAccent(code: string | null | undefined): string {
   return teamByCode(code)?.accent ?? "var(--rpl-accent)";
 }

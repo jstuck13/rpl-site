@@ -3,6 +3,7 @@ import Link from "next/link";
 import "@/ds/styles.css";
 import "./globals.css";
 import { CURRENT_SEASON } from "@/lib/data";
+import { SeasonsMenu } from "@/components/SeasonsMenu";
 
 /**
  * Where the site lives. Needed by `metadataBase` so Open Graph image URLs
@@ -39,6 +40,11 @@ export const metadata: Metadata = {
  *
  * At rollover this is a data change, not a restructure: the current-season
  * list keeps its hrefs, and the season that just ended joins PAST_SEASONS.
+ *
+ * The menu itself is `SeasonsMenu` — a client component, because a CSS-only
+ * hover menu opens on a phone and then cannot be closed by tapping the trigger
+ * again. These two arrays stay here, on the server, so the nav's contents are
+ * still a one-place edit.
  *
  * When PAST_SEASONS grows past two or three, this menu gets long and the
  * right move is to promote seasons to hub pages (/seasons/2 and so on) and
@@ -82,48 +88,11 @@ export default function RootLayout({
                   {item.label}
                 </Link>
               ))}
-              {/*
-                CSS-only dropdown: :hover and :focus-within both drive
-                visibility (see globals.css), so it opens on mouse and on
-                keyboard tab, and tabbing through the revealed links keeps
-                :focus-within true the whole way through. No client JS.
-              */}
-              <div className="site-nav__dropdown">
-                <button
-                  type="button"
-                  className="site-nav__dropdown-trigger"
-                  aria-haspopup="true"
-                >
-                  Seasons
-                  <span className="site-nav__caret" aria-hidden="true" />
-                </button>
-                <div className="site-nav__dropdown-menu">
-                  <p className="site-nav__dropdown-heading">
-                    Season {CURRENT_SEASON}
-                  </p>
-                  {CURRENT_SEASON_NAV.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="site-nav__dropdown-link"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                  <p className="site-nav__dropdown-heading site-nav__dropdown-heading--past">
-                    Past
-                  </p>
-                  {PAST_SEASONS.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="site-nav__dropdown-link"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+              <SeasonsMenu
+                currentSeason={CURRENT_SEASON}
+                currentSeasonNav={CURRENT_SEASON_NAV}
+                pastSeasons={PAST_SEASONS}
+              />
               <Link href="/join" className="site-nav__cta">
                 Play in RPL
               </Link>

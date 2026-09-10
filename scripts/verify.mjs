@@ -26,17 +26,9 @@ const warnings = [];
 const fail = (m) => errors.push(m);
 const warn = (m) => warnings.push(m);
 
-/** Clubs registered for a season, parsed out of the teams.ts literal. */
+/** The canonical club list. Read straight from JSON — no parsing to break. */
 function loadTeams() {
-  const src = readFileSync(join(ROOT, "src/lib/teams.ts"), "utf8");
-  const teams = [];
-  const re =
-    /\{\s*code:\s*"([^"]+)",\s*name:\s*"([^"]+)",\s*slug:\s*"([^"]+)",\s*season:\s*(\d+)/g;
-  let m;
-  while ((m = re.exec(src))) {
-    teams.push({ code: m[1], name: m[2], slug: m[3], season: Number(m[4]) });
-  }
-  return teams;
+  return read("src/data/clubs.json").clubs ?? [];
 }
 
 const league = read("src/data/league.json");
@@ -48,13 +40,10 @@ const draft = read("src/data/draft.json");
 const teams = loadTeams();
 
 if (teams.length === 0) {
-  fail(
-    "teams.ts: parsed 0 clubs. The TEAMS literal's shape probably changed — " +
-      "fix the regex in loadTeams() rather than deleting this check."
-  );
+  fail("clubs.json: no clubs listed — the club registry is empty or malformed");
 }
 
-// Clubs playing this season. NOTE: a club in teams.ts belongs to exactly one
+// Clubs playing this season. NOTE: a club in clubs.json belongs to exactly one
 // season, and clubs that played in more than one are registered under the
 // latest. So the authority on "who is playing now" is the players' own team
 // codes, not teamsForSeason(). See the note in teams.ts.
@@ -64,7 +53,22 @@ const rostered = players.filter(
 const clubCodes = [...new Set(rostered.map((p) => p.team))].sort();
 const knownCodes = new Set(teams.map((t) => t.code));
 const bySlug = new Map(players.map((p) => [p.slug, p]));
-const byName = new Map(players.map((p) => [p.name, p]));
+
+// Colour discipline. A club with no accent falls back to a CSS variable, which
+// breaks anything that renders outside a browser — exactly what killed the
+// Open Graph build. Only clubs actually playing need one, so a colourless
+// Season 1 club is fine and warns nothing.
+for (const club of teams) {
+  if (club.accent && !/^#[0-9a-f]{3,8}$/i.test(club.accent)) {
+    fail(`clubs.json: ${club.code} has accent "${club.accent}", not a hex colour`);
+  }
+  if (!club.accent && clubCodes.includes(club.code)) {
+    warn(
+      `clubs.json: ${club.code} is rostered this season but has no accent — ` +
+        "it falls back to the neutral chrome colour everywhere"
+    );
+  }
+}
 
 /* ---- rosters ------------------------------------------------------------ */
 
@@ -77,7 +81,7 @@ for (const code of clubCodes) {
     );
   }
   if (!knownCodes.has(code)) {
-    fail(`teams: club code "${code}" is on a roster but not in teams.ts`);
+    fail(`teams: club code "${code}" is on a roster but not in clubs.json`);
   }
   const managers = squad.filter((p) => p.isManager);
   if (managers.length !== 1) {
