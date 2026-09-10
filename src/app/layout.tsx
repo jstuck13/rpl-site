@@ -4,7 +4,17 @@ import "@/ds/styles.css";
 import "./globals.css";
 import { CURRENT_SEASON } from "@/lib/data";
 
+/**
+ * Where the site lives. Needed by `metadataBase` so Open Graph image URLs
+ * resolve to absolute production URLs — without it Next falls back to
+ * http://localhost:3000 and every social card silently fails to load for
+ * anyone who isn't running the dev server. Update this if a custom domain
+ * ever replaces the vercel.app one.
+ */
+const SITE_URL = "https://rpl-site.vercel.app";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Rocket Premier League",
     template: "%s · RPL",
