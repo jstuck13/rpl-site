@@ -4,16 +4,16 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild": "npm run verify",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
     "data": "node scripts/parse-tracker.mjs",
     "snapshot": "node scripts/snapshot-tracker.mjs",
+    "verify": "node scripts/verify.mjs",
     "clips": "node scripts/fetch-clips.mjs",
     "profiles": "node scripts/build-profiles.mjs",
     "recaps": "node scripts/build-recaps.mjs",
-    "verify": "node scripts/verify.mjs",
-    "prebuild": "npm run verify",
     "matchday": "npm run snapshot && npm run data && npm run recaps && npm run profiles && npm run build"
   },
   "dependencies": {
