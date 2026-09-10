@@ -12,6 +12,8 @@
     "clips": "node scripts/fetch-clips.mjs",
     "profiles": "node scripts/build-profiles.mjs",
     "recaps": "node scripts/build-recaps.mjs",
+    "verify": "node scripts/verify.mjs",
+    "prebuild": "npm run verify",
     "matchday": "npm run snapshot && npm run data && npm run recaps && npm run profiles && npm run build"
   },
   "dependencies": {
